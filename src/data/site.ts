@@ -13,6 +13,6 @@ export const siteConfig = {
   name: "AI工具导航",
   tagline: "2026年最全AI工具排行榜 — 国内外分类 · 真实排名",
   description: "精选50+AI工具，按国内国外分类，涵盖对话、绘画、视频、编程、音频、搜索、应用构建、效率办公八大品类。基于市场数据真实排名，持续更新。",
-  email: "hello@aitoolnav.com",
+  email: "zorvix@163.com",
   gtag: "G-XXXXXXXXXX",
 };
