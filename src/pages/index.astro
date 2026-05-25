@@ -1,0 +1,100 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ToolCard from "../components/ToolCard.astro";
+import CategoryGrid from "../components/CategoryGrid.astro";
+import AdBanner from "../components/AdBanner.astro";
+import { getCollection } from "astro:content";
+import { siteConfig, categories } from "../data/site";
+
+const allTools = await getCollection("tools");
+const featuredTools = allTools.filter((t) => t.data.featured).sort((a, b) => a.data.rank - b.data.rank);
+
+// Group tools by category for the full list
+function getToolsByCat(cat: string, region?: string) {
+  let tools = allTools.filter(t => t.data.category === cat).sort((a, b) => a.data.rank - b.data.rank);
+  if (region) tools = tools.filter(t => t.data.region === region);
+  return tools;
+}
+
+const intlTotal = allTools.filter(t => t.data.region === "国外").length;
+const cnTotal = allTools.filter(t => t.data.region === "国内").length;
+---
+
+<BaseLayout>
+  {/* Hero */}
+  <section class="bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
+        {siteConfig.tagline}
+      </h1>
+      <p class="text-lg md:text-xl text-blue-100 mb-4 max-w-2xl mx-auto">
+        {siteConfig.description}
+      </p>
+      <div class="flex justify-center items-center gap-3 text-blue-200 text-sm mb-8">
+        <span>🌍 国外 {intlTotal} 款</span>
+        <span class="text-blue-300">|</span>
+        <span>🇨🇳 国内 {cnTotal} 款</span>
+        <span class="text-blue-300">|</span>
+        <span>共 {allTools.length} 款 AI 工具</span>
+      </div>
+      <div class="flex justify-center gap-4">
+        <a href="#list" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors">
+          查看全部排行
+        </a>
+        <a href="#categories" class="bg-white/10 text-white px-6 py-3 rounded-full font-semibold hover:bg-white/20 transition-colors border border-white/20">
+          按分类浏览
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* Category Grid */}
+  <section id="categories" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10">
+    <CategoryGrid />
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <AdBanner />
+  </div>
+
+  {/* Full Ranked List by Category */}
+  <section id="list" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">📊 全部品类排行榜</h2>
+
+    {categories.map((cat) => {
+      const intl = getToolsByCat(cat.slug, "国外");
+      const cn = getToolsByCat(cat.slug, "国内");
+      if (intl.length === 0 && cn.length === 0) return null;
+      return (
+        <div class="mb-12">
+          <a href={`/categories/${cat.slug}`} class="text-xl font-bold text-gray-900 mb-1 inline-block hover:text-blue-600">
+            {cat.emoji} {cat.name}
+          </a>
+          <p class="text-sm text-gray-500 mb-4">{cat.desc}</p>
+
+          {intl.length > 0 && (
+            <div class="mb-6">
+              <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">🌍 国外排行</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+                {intl.map((tool) => (
+                  <ToolCard {...tool.data} slug={tool.id} />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {cn.length > 0 && (
+            <div>
+              <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">🇨🇳 国内排行</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+                {cn.map((tool) => (
+                  <ToolCard {...tool.data} slug={tool.id} />
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    })}
+  </section>
+</BaseLayout>

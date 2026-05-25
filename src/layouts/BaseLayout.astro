@@ -1,0 +1,73 @@
+---
+import { siteConfig, categories } from "../data/site";
+import SEOMeta from "../components/SEOMeta.astro";
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <SEOMeta />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="/" class="flex items-center gap-2 font-bold text-xl text-gray-900 no-underline">
+            <span class="text-2xl">🤖</span>
+            {siteConfig.name}
+          </a>
+          <nav class="hidden md:flex items-center gap-6">
+            {categories.slice(0, 5).map((c) => (
+              <a href={`/categories/${c.slug}`} class="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                {c.emoji} {c.name}
+              </a>
+            ))}
+            <a href="/categories" class="text-sm text-blue-600 hover:text-blue-700 font-medium">
+              全部分类 →
+            </a>
+          </nav>
+          <button id="menu-btn" class="md:hidden p-2 text-gray-600" aria-label="菜单">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="flex-1">
+      <slot />
+    </main>
+    <footer class="bg-gray-900 text-gray-400 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-white font-semibold mb-4">分类导航</h3>
+            <div class="space-y-2">
+              {categories.map((c) => (
+                <div><a href={`/categories/${c.slug}`} class="hover:text-white transition-colors text-sm">{c.name}</a></div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">关于本站</h3>
+            <div class="space-y-2 text-sm">
+              <div>{siteConfig.tagline}</div>
+              <div>📧 {siteConfig.email}</div>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
+          © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.getElementById('menu-btn')?.addEventListener('click', () => {
+        // Simple mobile menu - can be enhanced
+        alert('菜单功能开发中');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+---
+import { siteConfig } from "../data/site";
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+}
+
+const {
+  title = siteConfig.name,
+  description = siteConfig.description,
+  image = "/og-default.png",
+  type = "website",
+} = Astro.props;
+---
+
+<title>{title === siteConfig.name ? `${title} - ${siteConfig.tagline}` : `${title} | ${siteConfig.name}`}</title>
+<meta name="description" content={description} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta property="og:type" content={type} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{siteConfig.name}",
+  "url": "{Astro.site}",
+  "description": "{siteConfig.description}"
+}
+</script>
+
+{/* Google Analytics */}
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.gtag}`}></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{siteConfig.gtag}');
+</script>

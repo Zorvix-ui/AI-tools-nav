@@ -1,0 +1,43 @@
+---
+interface Props {
+  name: string;
+  category: string;
+  region: string;
+  rank: number;
+  description: string;
+  url: string;
+  pricing: string;
+  rating?: number;
+  tags: string[];
+  slug: string;
+}
+
+const { name, category, region, rank, description, url, pricing, rating, tags, slug } = Astro.props;
+const pricingColor: Record<string, string> = { "免费": "green", "免费增值": "blue", "付费": "orange", "内测": "purple" };
+const regionColor = region === "国内" ? "bg-red-100 text-red-700" : "bg-indigo-100 text-indigo-700";
+---
+
+<a href={`/tools/${slug}`} class="block bg-white rounded-xl border border-gray-200 p-5 hover:border-blue-300 hover:shadow-md transition-all group">
+  <div class="flex items-start justify-between mb-2">
+    <div class="flex items-center gap-2">
+      <span class="text-xs font-bold px-1.5 py-0.5 rounded bg-gray-100 text-gray-500">#{rank}</span>
+      <h3 class="font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">{name}</h3>
+    </div>
+    <div class="flex gap-1.5">
+      <span class={`text-xs px-2 py-0.5 rounded-full font-medium ${regionColor}`}>{region}</span>
+      <span class={`text-xs px-2 py-0.5 rounded-full bg-${pricingColor[pricing] || "gray"}-100 text-${pricingColor[pricing] || "gray"}-700 font-medium`}>{pricing}</span>
+    </div>
+  </div>
+  <p class="text-sm text-gray-600 mb-3 line-clamp-2">{description}</p>
+  <div class="flex flex-wrap gap-1.5">
+    {tags.slice(0, 4).map((tag) => (
+      <span class="text-xs px-2 py-0.5 bg-gray-100 text-gray-500 rounded-full">{tag}</span>
+    ))}
+  </div>
+  {rating && (
+    <div class="flex items-center gap-1 mt-3 text-sm text-yellow-500">
+      {"★".repeat(Math.floor(rating))}{"☆".repeat(5 - Math.floor(rating))}
+      <span class="text-gray-400 text-xs ml-1">{rating}</span>
+    </div>
+  )}
+</a>

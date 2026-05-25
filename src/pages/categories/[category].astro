@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ToolCard from "../../components/ToolCard.astro";
+import AdBanner from "../../components/AdBanner.astro";
+import { getCollection } from "astro:content";
+import { categories } from "../../data/site";
+import type { GetStaticPaths } from "astro";
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const tools = await getCollection("tools");
+  const slugs = [...new Set(tools.map((t) => t.data.category))];
+  return slugs.map((slug) => ({ params: { category: slug } }));
+};
+
+const { category } = Astro.params;
+const allTools = await getCollection("tools");
+const catInfo = categories.find((c) => c.slug === category);
+
+const intlTools = allTools
+  .filter((t) => t.data.category === category && t.data.region === "国外")
+  .sort((a, b) => a.data.rank - b.data.rank);
+
+const cnTools = allTools
+  .filter((t) => t.data.category === category && t.data.region === "国内")
+  .sort((a, b) => a.data.rank - b.data.rank);
+---
+
+<BaseLayout title={catInfo ? `${catInfo.name}工具排行` : category}>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="mb-8">
+      <a href="/" class="text-sm text-gray-500 hover:text-gray-700">← 返回首页</a>
+      <h1 class="text-3xl font-extrabold text-gray-900 mt-2">
+        {catInfo ? `${catInfo.emoji} ${catInfo.name}工具排行榜` : category}
+      </h1>
+      {catInfo && <p class="text-gray-600 mt-2">{catInfo.desc}</p>}
+      <p class="text-sm text-gray-400 mt-1">共 {intlTools.length + cnTools.length} 款工具 · 排名基于市场数据和用户评价</p>
+    </div>
+
+    <AdBanner />
+
+    {intlTools.length > 0 && (
+      <div class="mt-8">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <span class="text-sm px-2 py-0.5 rounded bg-indigo-100 text-indigo-700">🌍 国外</span>
+          排名
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {intlTools.map((tool) => (
+            <ToolCard {...tool.data} slug={tool.id} />
+          ))}
+        </div>
+      </div>
+    )}
+
+    {cnTools.length > 0 && (
+      <div class="mt-10">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <span class="text-sm px-2 py-0.5 rounded bg-red-100 text-red-700">🇨🇳 国内</span>
+          排名
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {cnTools.map((tool) => (
+            <ToolCard {...tool.data} slug={tool.id} />
+          ))}
+        </div>
+      </div>
+    )}
+
+    {intlTools.length === 0 && cnTools.length === 0 && (
+      <div class="text-center text-gray-500 py-20">
+        该分类暂无工具，<a href="/" class="text-blue-600 hover:underline">返回首页</a>
+      </div>
+    )}
+  </section>
+</BaseLayout>
