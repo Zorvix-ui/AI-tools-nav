@@ -19,36 +19,80 @@ const { title, description, image, canonical, keywords } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <SEOMeta {title} {description} {image} {canonical} {keywords} />
+    <style is:inline>
+      /* 移动端菜单 */
+      #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+      #mobile-menu.open { max-height: 500px; }
+      /* 搜索下拉 */
+      #search-results { display: none; }
+      #search-results.show { display: block; }
+    </style>
   </head>
   <body class="min-h-screen flex flex-col">
     <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-          <a href="/" class="flex items-center gap-2 font-bold text-xl text-gray-900 no-underline">
+        <div class="flex items-center justify-between h-16 gap-4">
+          <a href="/" class="flex items-center gap-2 font-bold text-xl text-gray-900 no-underline shrink-0">
             <span class="text-2xl">🤖</span>
-            {siteConfig.name}
+            <span class="hidden sm:inline">{siteConfig.name}</span>
           </a>
-          <nav class="hidden md:flex items-center gap-6">
+
+          <!-- 搜索框 -->
+          <div class="relative flex-1 max-w-sm hidden sm:block">
+            <input type="text" id="search-input" placeholder="搜索AI工具..."
+              class="w-full pl-9 pr-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              autocomplete="off" />
+            <svg class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <div id="search-results" class="absolute top-full mt-1 left-0 right-0 bg-white border border-gray-200 rounded-lg shadow-lg max-h-80 overflow-y-auto z-50"></div>
+          </div>
+
+          <nav class="hidden md:flex items-center gap-4 shrink-0">
             {categories.slice(0, 5).map((c) => (
-              <a href={`/categories/${c.slug}`} class="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+              <a href={`/categories/${c.slug}`} class="text-sm text-gray-600 hover:text-gray-900 transition-colors whitespace-nowrap">
                 {c.emoji} {c.name}
               </a>
             ))}
-            <a href="/categories" class="text-sm text-blue-600 hover:text-blue-700 font-medium">
+            <a href="/categories" class="text-sm text-blue-600 hover:text-blue-700 font-medium whitespace-nowrap">
               全部分类 →
             </a>
           </nav>
-          <button id="menu-btn" class="md:hidden p-2 text-gray-600" aria-label="菜单">
+          <button id="menu-btn" class="md:hidden p-2 text-gray-600 shrink-0" aria-label="菜单">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
           </button>
         </div>
+
+        <!-- 移动端搜索 -->
+        <div class="sm:hidden pb-1">
+          <input type="text" id="search-input-mobile" placeholder="搜索AI工具..."
+            class="w-full pl-9 pr-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            autocomplete="off" />
+          <svg class="w-4 h-4 text-gray-400 absolute left-3 bottom-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <div id="search-results-mobile" class="bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto hidden mt-1"></div>
+        </div>
+
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="md:hidden border-t border-gray-100">
+          <div class="py-2 space-y-1">
+            {categories.map((c) => (
+              <a href={`/categories/${c.slug}`} class="block px-2 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                {c.emoji} {c.name} <span class="text-gray-400 text-xs ml-1">{c.desc}</span>
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </header>
+
     <main class="flex-1">
       <slot />
     </main>
+
     <footer class="bg-gray-900 text-gray-400 mt-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -73,11 +117,76 @@ const { title, description, image, canonical, keywords } = Astro.props;
         </div>
       </div>
     </footer>
+
     <script>
-      document.getElementById('menu-btn')?.addEventListener('click', () => {
-        alert('菜单功能开发中');
+      // 移动端菜单切换
+      document.getElementById('menu-btn')?.addEventListener('click', function() {
+        document.getElementById('mobile-menu')?.classList.toggle('open');
       });
     </script>
+
+    <!-- 搜索功能 -->
+    <script is:inline>
+    (function() {
+      // 搜索索引内嵌
+      var TOOLS = [];
+      function initSearch() {
+        fetch('/tools-index.json')
+          .then(r => r.json())
+          .then(data => { TOOLS = data; })
+          .catch(() => {});
+      }
+
+      function search(query) {
+        if (!query || query.length < 1) return [];
+        var q = query.toLowerCase();
+        return TOOLS.filter(function(t) {
+          return t.name.toLowerCase().indexOf(q) > -1
+            || (t.desc && t.desc.toLowerCase().indexOf(q) > -1)
+            || (t.tags && t.tags.toLowerCase().indexOf(q) > -1)
+            || (t.cat && t.cat.toLowerCase().indexOf(q) > -1);
+        }).slice(0, 8);
+      }
+
+      function renderResults(results) {
+        if (!results.length) return '<div class="px-4 py-3 text-sm text-gray-400">未找到相关工具</div>';
+        return results.map(function(t) {
+          return '<a href="/tools/' + t.slug + '" class="block px-4 py-2.5 hover:bg-blue-50 border-b border-gray-50 last:border-0">'
+            + '<div class="text-sm font-medium text-gray-900">' + (t.rank ? '#' + t.rank + ' ' : '') + t.name + '</div>'
+            + '<div class="text-xs text-gray-500 truncate">' + (t.desc || '') + '</div>'
+            + '</a>';
+        }).join('');
+      }
+
+      function setupSearch(inputId, resultsId) {
+        var input = document.getElementById(inputId);
+        var results = document.getElementById(resultsId);
+        if (!input || !results) return;
+        var timer;
+        input.addEventListener('input', function() {
+          clearTimeout(timer);
+          var val = this.value.trim();
+          if (!val) { results.innerHTML = ''; results.classList.remove('show'); return; }
+          timer = setTimeout(function() {
+            var r = search(val);
+            results.innerHTML = renderResults(r);
+            results.classList.add('show');
+          }, 150);
+        });
+        input.addEventListener('blur', function() {
+          setTimeout(function() { results.classList.remove('show'); }, 200);
+        });
+        input.addEventListener('focus', function() {
+          if (this.value.trim() && results.innerHTML) results.classList.add('show');
+        });
+      }
+
+      initSearch();
+      setupSearch('search-input', 'search-results');
+      setupSearch('search-input-mobile', 'search-results-mobile');
+    })();
+    </script>
+
     <!-- 百度自动推送 -->
     <script is:inline>
     (function(){
