@@ -1,6 +1,16 @@
 ---
 import { siteConfig, categories } from "../data/site";
 import SEOMeta from "../components/SEOMeta.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+  keywords?: string;
+}
+
+const { title, description, image, canonical, keywords } = Astro.props;
 ---
 
 <!doctype html>
@@ -8,7 +18,7 @@ import SEOMeta from "../components/SEOMeta.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <SEOMeta />
+    <SEOMeta {title} {description} {image} {canonical} {keywords} />
   </head>
   <body class="min-h-screen flex flex-col">
     <header class="bg-white border-b border-gray-200 sticky top-0 z-50">

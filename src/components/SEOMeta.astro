@@ -5,6 +5,8 @@ interface Props {
   description?: string;
   image?: string;
   type?: string;
+  canonical?: string;
+  keywords?: string;
 }
 
 const {
@@ -12,29 +14,51 @@ const {
   description = siteConfig.description,
   image = "/og-default.png",
   type = "website",
+  canonical,
+  keywords,
 } = Astro.props;
+
+const fullTitle = title === siteConfig.name ? `${title} - ${siteConfig.tagline}` : `${title} | ${siteConfig.name}`;
+const pageUrl = canonical || Astro.url.href;
+
+const webSiteSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": siteConfig.name,
+  "url": Astro.site?.toString() || "",
+  "description": siteConfig.description,
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": `${Astro.site?.toString() || ""}/search?q={search_term_string}`,
+    "query-input": "required name=search_term_string"
+  }
+});
 ---
 
-<title>{title === siteConfig.name ? `${title} - ${siteConfig.tagline}` : `${title} | ${siteConfig.name}`}</title>
+<title>{fullTitle}</title>
 <meta name="description" content={description} />
-<meta property="og:title" content={title} />
+{keywords && <meta name="keywords" content={keywords} />}
+<link rel="canonical" href={pageUrl} />
+
+<meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={image} />
 <meta property="og:type" content={type} />
+<meta property="og:url" content={pageUrl} />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:site_name" content={siteConfig.name} />
+
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="zorvix@163.com" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "{siteConfig.name}",
-  "url": "{Astro.site}",
-  "description": "{siteConfig.description}"
-}
-</script>
+<script type="application/ld+json" set:html={webSiteSchema} />
 
 {/* Google Analytics */}
 <script async src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.gtag}`}></script>
