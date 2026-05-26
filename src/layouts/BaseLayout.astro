@@ -120,7 +120,7 @@ const { title, description, image, canonical, keywords } = Astro.props;
             <h3 class="text-white font-semibold mb-4">关于本站</h3>
             <div class="space-y-2 text-sm">
               <div>{siteConfig.tagline}</div>
-              <div>📧 {siteConfig.email}</div>
+              <div>📧 <a href="mailto:zorvix@163.com" class="hover:text-white transition-colors">{siteConfig.email}</a></div>
               <div>收录 50+ AI工具 · 持续更新</div>
             </div>
           </div>
