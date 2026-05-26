@@ -1,15 +1,20 @@
 ---
-name: "Udio"
-category: "audio"
-region: "国外"
-rank: 2
-description: "音质最高的AI音乐，48kHz高保真。追求音质听得出来差别，支持分轨下载专业混音。"
-url: "https://www.udio.com"
-pricing: "免费增值"
+name: Udio
+category: audio
+region: 国外
+rank: 3
+description: 音质最高的AI音乐，48kHz高保真。追求音质听得出来差别，支持分轨下载专业混音。
+url: 'https://www.udio.com'
+pricing: 免费增值
 rating: 4.6
-tags: ["音乐生成", "高保真", "分轨", "AI作曲", "48kHz"]
+tags:
+  - 音乐生成
+  - 高保真
+  - 分轨
+  - AI作曲
+  - 48kHz
 featured: false
-publishDate: 2026-03-16
+publishDate: 2026-03-16T00:00:00.000Z
 ---
 
 ## 简介

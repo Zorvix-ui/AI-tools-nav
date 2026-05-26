@@ -2,7 +2,7 @@
 name: 纳米AI搜索
 category: search
 region: 国内
-rank: 1
+rank: 2
 description: 360出品，中文搜索覆盖最广的AI引擎。常规信息查询、新闻热点跟踪，免费够用。
 url: 'https://www.n.cn'
 pricing: 免费

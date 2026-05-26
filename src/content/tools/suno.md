@@ -2,7 +2,7 @@
 name: Suno
 category: audio
 region: 国外
-rank: 1
+rank: 2
 description: AI写歌之王，10秒一首完整歌曲。短视频BGM、播客片头、独立音乐人出Demo，V5.5人声已经分不清真假。
 url: 'https://suno.ai'
 pricing: 免费增值

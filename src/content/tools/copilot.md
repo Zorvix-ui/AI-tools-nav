@@ -1,15 +1,20 @@
 ---
-name: "GitHub Copilot"
-category: "code"
-region: "国外"
-rank: 2
-description: "微软出品，跟VS Code原生集成。代码补全+Agent模式双管齐下，.NET和Azure生态首选。"
-url: "https://github.com/features/copilot"
-pricing: "免费增值"
+name: GitHub Copilot
+category: code
+region: 国外
+rank: 3
+description: 微软出品，跟VS Code原生集成。代码补全+Agent模式双管齐下，.NET和Azure生态首选。
+url: 'https://github.com/features/copilot'
+pricing: 免费增值
 rating: 4.5
-tags: ["编程", "VS Code", "微软", "代码补全", "Agent"]
+tags:
+  - 编程
+  - VS Code
+  - 微软
+  - 代码补全
+  - Agent
 featured: false
-publishDate: 2026-03-02
+publishDate: 2026-03-02T00:00:00.000Z
 ---
 
 ## 简介

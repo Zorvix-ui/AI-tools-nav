@@ -1,15 +1,20 @@
 ---
-name: "Bolt.new"
-category: "app-builder"
-region: "国外"
+name: Bolt.new
+category: app-builder
+region: 国外
 rank: 1
-description: "一句话生成一个网站，真的能跑。产品原型验证的核武器，想法到可用应用只要几分钟。"
-url: "https://bolt.new"
-pricing: "免费增值"
+description: 一句话生成一个网站，真的能跑。产品原型验证的核武器，想法到可用应用只要几分钟。
+url: 'https://bolt.new'
+pricing: 免费增值
 rating: 4.7
-tags: ["应用构建", "全栈", "原型", "Web应用", "快速开发"]
+tags:
+  - 应用构建
+  - 全栈
+  - 原型
+  - Web应用
+  - 快速开发
 featured: true
-publishDate: 2026-04-05
+publishDate: 2026-04-05T00:00:00.000Z
 ---
 
 ## 简介

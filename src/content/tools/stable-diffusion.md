@@ -1,15 +1,20 @@
 ---
-name: "Stable Diffusion"
-category: "image"
-region: "国外"
+name: Stable Diffusion
+category: image
+region: 国外
 rank: 3
-description: "最强开源绘画模型，免费无限制。能装在自己电脑上跑，炼丹玩家和隐私敏感场景唯一选择。"
-url: "https://stability.ai"
-pricing: "免费"
+description: 最强开源绘画模型，免费无限制。能装在自己电脑上跑，炼丹玩家和隐私敏感场景唯一选择。
+url: 'https://stability.ai'
+pricing: 免费
 rating: 4.5
-tags: ["开源", "本地部署", "绘画", "插件生态", "隐私"]
+tags:
+  - 开源
+  - 本地部署
+  - 绘画
+  - 插件生态
+  - 隐私
 featured: false
-publishDate: 2026-01-18
+publishDate: 2026-01-18T00:00:00.000Z
 ---
 
 ## 简介

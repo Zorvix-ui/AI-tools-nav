@@ -1,15 +1,20 @@
 ---
-name: "Seedance"
-category: "video"
-region: "国内"
-rank: 3
-description: "字节出品，冯骥说它地表最强。一张图就能生成多镜头视频，短视频创作者兴奋剂。"
-url: "https://seedance.bytedance.com"
-pricing: "免费增值"
+name: Seedance
+category: video
+region: 国内
+rank: 2
+description: 字节出品，冯骥说它地表最强。一张图就能生成多镜头视频，短视频创作者兴奋剂。
+url: 'https://seedance.bytedance.com'
+pricing: 免费增值
 rating: 4.5
-tags: ["视频生成", "图生视频", "多镜头", "字节", "短视频"]
+tags:
+  - 视频生成
+  - 图生视频
+  - 多镜头
+  - 字节
+  - 短视频
 featured: false
-publishDate: 2026-04-01
+publishDate: 2026-04-01T00:00:00.000Z
 ---
 
 ## 简介

@@ -2,7 +2,7 @@
 name: 通义千问
 category: chat
 region: 国内
-rank: 3
+rank: 4
 description: 阿里出品，企业办公场景最强。绑钉钉，企业协作、数据分析、文档处理一条龙。
 url: 'https://tongyi.aliyun.com'
 pricing: 免费增值

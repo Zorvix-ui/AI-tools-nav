@@ -1,15 +1,20 @@
 ---
-name: "Sora"
-category: "video"
-region: "国外"
+name: Sora
+category: video
+region: 国外
 rank: 1
-description: "AI视频的iPhone时刻，画质和真实感断层领先。专业影视概念和广告片创作，质量没对手。"
-url: "https://sora.com"
-pricing: "付费"
+description: AI视频的iPhone时刻，画质和真实感断层领先。专业影视概念和广告片创作，质量没对手。
+url: 'https://sora.com'
+pricing: 付费
 rating: 4.9
-tags: ["视频生成", "影视级", "真实感", "OpenAI", "文生视频"]
+tags:
+  - 视频生成
+  - 影视级
+  - 真实感
+  - OpenAI
+  - 文生视频
 featured: true
-publishDate: 2026-03-10
+publishDate: 2026-03-10T00:00:00.000Z
 ---
 
 ## 简介

@@ -2,7 +2,7 @@
 name: Cursor
 category: code
 region: 国外
-rank: 1
+rank: 2
 description: 程序员的新欢，写代码像有个人在旁边帮你按Tab。改Bug、重构、写文档全在编辑器里完成。
 url: 'https://cursor.com'
 pricing: 免费增值

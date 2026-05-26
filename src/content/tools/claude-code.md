@@ -1,15 +1,20 @@
 ---
-name: "Claude Code"
-category: "code"
-region: "国外"
+name: Claude Code
+category: code
+region: 国外
 rank: 1
-description: "Anthropic的终端编程助手，54%开发者市场份额。命令行里直接指挥AI干活，自主修Bug一把好手。"
-url: "https://docs.anthropic.com/en/docs/claude-code"
-pricing: "免费增值"
+description: Anthropic的终端编程助手，54%开发者市场份额。命令行里直接指挥AI干活，自主修Bug一把好手。
+url: 'https://docs.anthropic.com/en/docs/claude-code'
+pricing: 免费增值
 rating: 4.8
-tags: ["编程", "终端", "Agent", "Anthropic", "CLI"]
+tags:
+  - 编程
+  - 终端
+  - Agent
+  - Anthropic
+  - CLI
 featured: true
-publishDate: 2026-03-04
+publishDate: 2026-03-04T00:00:00.000Z
 ---
 
 ## 简介

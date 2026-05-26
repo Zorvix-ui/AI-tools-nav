@@ -1,15 +1,20 @@
 ---
-name: "Lovable"
-category: "app-builder"
-region: "国外"
+name: Lovable
+category: app-builder
+region: 国外
 rank: 2
-description: "AI写应用里UI最漂亮的。生成的应用设计感在线，适合C端产品原型和MVP快速验证。"
-url: "https://lovable.dev"
-pricing: "免费增值"
+description: AI写应用里UI最漂亮的。生成的应用设计感在线，适合C端产品原型和MVP快速验证。
+url: 'https://lovable.dev'
+pricing: 免费增值
 rating: 4.5
-tags: ["应用构建", "UI设计", "原型", "MVP", "React"]
+tags:
+  - 应用构建
+  - UI设计
+  - 原型
+  - MVP
+  - React
 featured: false
-publishDate: 2026-04-06
+publishDate: 2026-04-06T00:00:00.000Z
 ---
 
 ## 简介

@@ -1,15 +1,20 @@
 ---
-name: "Kimi"
-category: "chat"
-region: "国内"
+name: Kimi
+category: chat
+region: 国内
 rank: 3
-description: "一口气读20万字的长文杀手。大学生看论文、律师看合同、分析师看财报，丢进去直接问。"
-url: "https://kimi.moonshot.cn"
-pricing: "免费"
+description: 一口气读20万字的长文杀手。大学生看论文、律师看合同、分析师看财报，丢进去直接问。
+url: 'https://kimi.moonshot.cn'
+pricing: 免费
 rating: 4.5
-tags: ["长文本", "阅读", "学术", "法律", "文档分析"]
+tags:
+  - 长文本
+  - 阅读
+  - 学术
+  - 法律
+  - 文档分析
 featured: false
-publishDate: 2026-01-13
+publishDate: 2026-01-13T00:00:00.000Z
 ---
 
 ## 简介

@@ -1,15 +1,20 @@
 ---
-name: "Gemini"
-category: "chat"
-region: "国外"
+name: Gemini
+category: chat
+region: 国外
 rank: 3
-description: "Google出品，看视频、读图片、搜信息全能干。绑着Gmail和YouTube，Google全家桶用户闭眼入。"
-url: "https://gemini.google.com"
-pricing: "免费增值"
+description: Google出品，看视频、读图片、搜信息全能干。绑着Gmail和YouTube，Google全家桶用户闭眼入。
+url: 'https://gemini.google.com'
+pricing: 免费增值
 rating: 4.5
-tags: ["多模态", "Google", "视频理解", "搜索", "云服务"]
+tags:
+  - 多模态
+  - Google
+  - 视频理解
+  - 搜索
+  - 云服务
 featured: false
-publishDate: 2026-02-06
+publishDate: 2026-02-06T00:00:00.000Z
 ---
 
 ## 简介

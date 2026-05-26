@@ -1,15 +1,20 @@
 ---
-name: "Runway"
-category: "video"
-region: "国外"
+name: Runway
+category: video
+region: 国外
 rank: 2
-description: "AI视频老牌先驱，编辑能力最强。抠像、跟踪、调色一站式，视频后期工作流全包。"
-url: "https://runwayml.com"
-pricing: "免费增值"
+description: AI视频老牌先驱，编辑能力最强。抠像、跟踪、调色一站式，视频后期工作流全包。
+url: 'https://runwayml.com'
+pricing: 免费增值
 rating: 4.6
-tags: ["视频生成", "视频编辑", "抠像", "调色", "Gen-4"]
+tags:
+  - 视频生成
+  - 视频编辑
+  - 抠像
+  - 调色
+  - Gen-4
 featured: false
-publishDate: 2026-03-11
+publishDate: 2026-03-11T00:00:00.000Z
 ---
 
 ## 简介

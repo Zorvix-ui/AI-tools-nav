@@ -1,15 +1,20 @@
 ---
-name: "DALL·E 4"
-category: "image"
-region: "国外"
+name: DALL·E 4
+category: image
+region: 国外
 rank: 2
-description: "OpenAI出品，跟ChatGPT一个对话框里就能画。指令理解最准，想画什么说什么就行。"
-url: "https://openai.com/dall-e"
-pricing: "付费"
+description: OpenAI出品，跟ChatGPT一个对话框里就能画。指令理解最准，想画什么说什么就行。
+url: 'https://openai.com/dall-e'
+pricing: 付费
 rating: 4.6
-tags: ["绘画", "ChatGPT集成", "指令理解", "OpenAI", "文生图"]
+tags:
+  - 绘画
+  - ChatGPT集成
+  - 指令理解
+  - OpenAI
+  - 文生图
 featured: false
-publishDate: 2026-01-17
+publishDate: 2026-01-17T00:00:00.000Z
 ---
 
 ## 简介

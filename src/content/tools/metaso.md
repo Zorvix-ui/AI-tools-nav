@@ -1,15 +1,20 @@
 ---
-name: "秘塔AI搜索"
-category: "search"
-region: "国内"
+name: 秘塔AI搜索
+category: search
+region: 国内
 rank: 1
-description: "国产AI搜索最强，学术论文一键深读。找文献、写综述、查资料效率翻10倍，没有广告。"
-url: "https://metaso.cn"
-pricing: "免费"
+description: 国产AI搜索最强，学术论文一键深读。找文献、写综述、查资料效率翻10倍，没有广告。
+url: 'https://metaso.cn'
+pricing: 免费
 rating: 4.7
-tags: ["AI搜索", "学术", "中文搜索", "无广告", "国产"]
+tags:
+  - AI搜索
+  - 学术
+  - 中文搜索
+  - 无广告
+  - 国产
 featured: true
-publishDate: 2026-03-21
+publishDate: 2026-03-21T00:00:00.000Z
 ---
 
 ## 简介
