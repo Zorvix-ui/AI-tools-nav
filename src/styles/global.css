@@ -6,12 +6,79 @@
   body {
     @apply bg-gray-50 text-gray-900 antialiased;
   }
+
+  ::selection {
+    @apply bg-blue-100 text-blue-900;
+  }
 }
 
 @layer components {
-  .prose-tool h2 { @apply text-xl font-bold mt-6 mb-3; }
-  .prose-tool h3 { @apply text-lg font-semibold mt-4 mb-2; }
-  .prose-tool p { @apply mb-4 leading-relaxed; }
-  .prose-tool ul { @apply list-disc pl-5 mb-4 space-y-1; }
-  .prose-tool a { @apply text-blue-600 hover:underline; }
+  /* ── Prose Content ── */
+  .prose-tool h2 {
+    @apply text-2xl font-extrabold text-gray-900 mt-12 mb-4 pb-2 border-b-2 border-gray-100;
+  }
+  .prose-tool h3 {
+    @apply text-lg font-bold text-gray-800 mt-8 mb-3;
+  }
+  .prose-tool p {
+    @apply mb-5 leading-relaxed text-gray-700 text-base;
+  }
+  .prose-tool ul {
+    @apply list-none pl-0 mb-6 space-y-2;
+  }
+  .prose-tool ul li {
+    @apply pl-6 relative text-gray-700 leading-relaxed;
+  }
+  .prose-tool ul li::before {
+    content: "";
+    @apply absolute left-1.5 top-[0.6em] w-1.5 h-1.5 rounded-full bg-blue-400;
+  }
+  .prose-tool ol {
+    @apply list-decimal pl-6 mb-6 space-y-2 text-gray-700;
+  }
+  .prose-tool ol li {
+    @apply pl-1 leading-relaxed;
+    &::marker { @apply text-blue-500 font-semibold; }
+  }
+  .prose-tool a {
+    @apply text-blue-600 font-medium underline decoration-blue-200 underline-offset-2 hover:decoration-blue-500 transition-colors;
+  }
+  .prose-tool strong {
+    @apply text-gray-900 font-semibold;
+  }
+  .prose-tool blockquote {
+    @apply border-l-4 border-blue-400 bg-blue-50/50 pl-5 py-3 pr-4 my-6 rounded-r-lg text-gray-700 italic;
+  }
+  .prose-tool code {
+    @apply bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+  .prose-tool pre {
+    @apply bg-gray-900 text-gray-100 p-5 rounded-xl overflow-x-auto mb-6;
+  }
+  .prose-tool pre code {
+    @apply bg-transparent text-gray-100 px-0 py-0;
+  }
+
+  /* ── Tables ── */
+  .prose-tool table {
+    @apply w-full border-collapse mb-6 text-sm rounded-lg overflow-hidden;
+  }
+  .prose-tool thead {
+    @apply bg-gray-50;
+  }
+  .prose-tool thead th {
+    @apply text-left px-4 py-3 font-semibold text-gray-600 text-xs uppercase tracking-wider border-b-2 border-gray-200;
+  }
+  .prose-tool tbody td {
+    @apply px-4 py-3 text-gray-700 border-b border-gray-100;
+  }
+  .prose-tool tbody tr:last-child td {
+    @apply border-b-0;
+  }
+  .prose-tool tbody tr:hover {
+    @apply bg-blue-50/30;
+  }
+  .prose-tool tbody tr td:first-child {
+    @apply font-medium text-gray-900;
+  }
 }

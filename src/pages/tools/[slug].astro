@@ -10,74 +10,184 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 const { slug } = Astro.params;
-const tool = (await getCollection("tools")).find((t) => t.id.replace(/\.md$/, "") === slug);
+const tools = await getCollection("tools");
+const tool = tools.find((t) => t.id.replace(/\.md$/, "") === slug);
 
-if (!tool) {
-  return Astro.redirect("/404");
-}
+if (!tool) return Astro.redirect("/404");
 
 const { Content } = await tool.render();
 const { name, category, region, rank, description, url, pricing, rating, tags } = tool.data;
 
-const pricingColor: Record<string, string> = {
-  "免费": "bg-green-100 text-green-700",
-  "免费增值": "bg-blue-100 text-blue-700",
-  "付费": "bg-orange-100 text-orange-700",
-  "内测": "bg-purple-100 text-purple-700",
+// Category theming
+const catTheme: Record<string, { gradient: string; icon: string; accent: string }> = {
+  chat: { gradient: "from-blue-500 to-indigo-600", icon: "💬", accent: "bg-blue-500" },
+  code: { gradient: "from-emerald-500 to-teal-600", icon: "💻", accent: "bg-emerald-500" },
+  image: { gradient: "from-purple-500 to-pink-600", icon: "🎨", accent: "bg-purple-500" },
+  video: { gradient: "from-rose-500 to-red-600", icon: "🎬", accent: "bg-rose-500" },
+  audio: { gradient: "from-fuchsia-500 to-violet-600", icon: "🎵", accent: "bg-fuchsia-500" },
+  search: { gradient: "from-cyan-500 to-blue-600", icon: "🔍", accent: "bg-cyan-500" },
+  productivity: { gradient: "from-amber-500 to-orange-600", icon: "⚡", accent: "bg-amber-500" },
+  "app-builder": { gradient: "from-indigo-500 to-violet-600", icon: "🧩", accent: "bg-indigo-500" },
 };
+const theme = catTheme[category] || catTheme.chat;
+
+const pricingCfg: Record<string, { label: string; cls: string }> = {
+  "免费": { label: "免费", cls: "bg-green-100 text-green-700 border-green-200" },
+  "免费增值": { label: "免费增值", cls: "bg-blue-100 text-blue-700 border-blue-200" },
+  "付费": { label: "付费", cls: "bg-orange-100 text-orange-700 border-orange-200" },
+};
+const pcfg = pricingCfg[pricing] || pricingCfg["免费增值"];
+
+// Related tools: same category, excluding current, top 4 by rank
+const related = tools
+  .filter((t) => t.data.category === category && t.id.replace(/\.md$/, "") !== slug)
+  .sort((a, b) => a.data.rank - b.data.rank)
+  .slice(0, 4);
+
+// Star render
+function starHTML(r: number) {
+  const full = Math.floor(r), half = r - full >= 0.5;
+  let s = "";
+  for (let i = 0; i < 5; i++) {
+    if (i < full) s += '<span class="text-amber-400">★</span>';
+    else if (i === full && half) s += '<span class="text-amber-400">★</span>';
+    else s += '<span class="text-gray-300">★</span>';
+  }
+  return s;
+}
 ---
 
 <BaseLayout title={name} description={description}>
-  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    {/* Breadcrumb */}
-    <nav class="text-sm text-gray-500 mb-6">
-      <a href="/" class="hover:text-gray-700">首页</a>
-      <span class="mx-2">/</span>
-      <a href={`/categories/${category}`} class="hover:text-gray-700">{category}</a>
-      <span class="mx-2">/</span>
-      <span class="text-gray-900">{name}</span>
+  <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-gray-400 mb-6">
+      <a href="/" class="hover:text-gray-600 transition-colors">首页</a>
+      <span class="mx-2">›</span>
+      <a href={`/categories/${category}`} class="hover:text-gray-600 transition-colors">{category}</a>
+      <span class="mx-2">›</span>
+      <span class="text-gray-700 font-medium">{name}</span>
     </nav>
 
-    {/* Header */}
-    <div class="bg-white rounded-2xl border border-gray-200 p-8 mb-8">
-      <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+    <!-- Hero Card -->
+    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br {theme.gradient} text-white p-8 mb-10">
+      <div class="absolute inset-0 bg-black/10"></div>
+      <div class="absolute top-0 right-0 w-64 h-64 rounded-full bg-white/5 -translate-y-1/2 translate-x-1/2"></div>
+      <div class="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-white/5 translate-y-1/2 -translate-x-1/2"></div>
+      <div class="relative z-10 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
         <div class="flex-1">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="text-sm font-bold px-2 py-0.5 rounded bg-gray-100 text-gray-500">#{rank}</span>
-            <span class={`text-xs px-2 py-0.5 rounded-full font-medium ${region === "国内" ? "bg-red-100 text-red-700" : "bg-indigo-100 text-indigo-700"}`}>{region}</span>
-            <span class={`text-xs px-2 py-0.5 rounded-full font-medium ${pricingColor[pricing]}`}>{pricing}</span>
+          <div class="flex items-center gap-2.5 mb-3 flex-wrap">
+            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-white/20 backdrop-blur-sm">#{rank}</span>
+            <span class={`text-xs px-2.5 py-1 rounded-full border font-medium ${region === "国内" ? "bg-white/20 border-white/30" : "bg-white/20 border-white/30"}`}>{region}</span>
+            <span class={`text-xs px-2.5 py-1 rounded-full border font-medium ${pcfg.cls.replace("bg-", "bg-opacity-80 bg-").replace("text-", "text-white").replace("border-", "border-white/30")} bg-white/20`}>{pcfg.label}</span>
+            {rating && (
+              <span class="text-sm font-semibold ml-1" set:html={starHTML(rating)}></span>
+            )}
           </div>
-          <h1 class="text-3xl font-extrabold text-gray-900 mb-2">{name}</h1>
-          <p class="text-lg text-gray-600">{description}</p>
+          <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">{name}</h1>
+          <p class="text-lg text-white/80 max-w-2xl leading-relaxed">{description}</p>
+          <div class="flex flex-wrap items-center gap-3 mt-5">
+            <a href={url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white text-gray-900 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg shadow-black/10">
+              访问官网
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+            <div class="flex flex-wrap gap-1.5">
+              {tags.map((tag: string) => (
+                <span class="text-xs px-2.5 py-1 rounded-full bg-white/15 backdrop-blur-sm border border-white/10">{tag}</span>
+              ))}
+            </div>
+          </div>
         </div>
-        {rating && (
-          <div class="text-center bg-yellow-50 rounded-xl px-4 py-3">
-            <div class="text-2xl font-bold text-yellow-600">{rating}</div>
-            <div class="text-xs text-yellow-500">综合评分</div>
+      </div>
+    </div>
+
+    <!-- Two-column layout -->
+    <div class="flex flex-col lg:flex-row gap-10">
+      <!-- Main content -->
+      <div class="flex-1 min-w-0">
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-8 lg:p-10 prose-tool">
+          <Content />
+        </div>
+        <AdBanner />
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="w-full lg:w-80 shrink-0 space-y-6">
+        <!-- Quick Facts -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5">
+          <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">基本信息</h3>
+          <dl class="space-y-3">
+            <div class="flex justify-between items-center text-sm">
+              <dt class="text-gray-500">分类</dt>
+              <dd class="text-gray-900 font-medium">{theme.icon} {category}</dd>
+            </div>
+            <div class="flex justify-between items-center text-sm">
+              <dt class="text-gray-500">地区</dt>
+              <dd class="text-gray-900 font-medium">{region}</dd>
+            </div>
+            <div class="flex justify-between items-center text-sm">
+              <dt class="text-gray-500">价格</dt>
+              <dd class={`text-xs px-2 py-0.5 rounded-full border font-medium ${pcfg.cls}`}>{pcfg.label}</dd>
+            </div>
+            {rating && (
+              <div class="flex justify-between items-center text-sm">
+                <dt class="text-gray-500">评分</dt>
+                <dd class="flex items-center gap-1">
+                  <span class="text-amber-400 text-sm" set:html={starHTML(rating)}></span>
+                  <span class="text-gray-900 font-semibold">{rating}</span>
+                </dd>
+              </div>
+            )}
+            <div class="flex justify-between items-center text-sm">
+              <dt class="text-gray-500">排名</dt>
+              <dd class="text-gray-900 font-semibold">#{rank}</dd>
+            </div>
+          </dl>
+          <a href={url} target="_blank" rel="noopener noreferrer" class="mt-4 block w-full text-center bg-gray-900 text-white text-sm font-semibold py-2.5 rounded-xl hover:bg-gray-800 transition-colors">
+            访问官网 →
+          </a>
+        </div>
+
+        <!-- Tags -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5">
+          <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">标签</h3>
+          <div class="flex flex-wrap gap-1.5">
+            {tags.map((tag: string) => (
+              <span class="text-xs px-2.5 py-1.5 rounded-lg bg-gray-50 text-gray-600 border border-gray-100 hover:border-gray-200 transition-colors">{tag}</span>
+            ))}
+          </div>
+        </div>
+
+        <!-- Related Tools -->
+        {related.length > 0 && (
+          <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5">
+            <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">同类工具</h3>
+            <div class="space-y-2">
+              {related.map((r) => (
+                <a href={`/tools/${r.id.replace(/\.md$/, "")}`} class="flex items-center gap-3 p-2.5 -mx-2 rounded-xl hover:bg-gray-50 transition-colors group">
+                  <span class={`shrink-0 w-6 h-6 rounded-lg flex items-center justify-center text-xs font-bold text-white ${theme.accent}`}>{r.data.rank}</span>
+                  <div class="min-w-0 flex-1">
+                    <div class="text-sm font-medium text-gray-900 truncate group-hover:text-blue-600 transition-colors">{r.data.name}</div>
+                    <div class="text-xs text-gray-400 truncate">{r.data.description}</div>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
         )}
-      </div>
 
-      <div class="flex flex-wrap gap-4 mt-4">
-        <a href={url} target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition-colors inline-flex items-center gap-2">
-          访问官网 <span class="text-blue-200">→</span>
-        </a>
-        <div class="flex flex-wrap gap-1.5 items-center">
-          {tags.map((tag: string) => (
-            <span class="text-xs px-2.5 py-1 bg-gray-100 text-gray-600 rounded-full">{tag}</span>
-          ))}
+        <!-- Share -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5">
+          <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">分享</h3>
+          <div class="flex gap-2">
+            <button onclick={`navigator.clipboard.writeText(window.location.href)`} class="flex-1 text-xs font-medium text-gray-600 bg-gray-50 hover:bg-gray-100 py-2 rounded-lg transition-colors border border-gray-100">
+              复制链接
+            </button>
+          </div>
         </div>
-      </div>
+      </aside>
     </div>
 
-    {/* Content */}
-    <div class="bg-white rounded-2xl border border-gray-200 p-8 mb-8 prose-tool">
-      <Content />
-    </div>
-
-    <AdBanner />
-
-    {/* Structured Data */}
+    <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify([
       {
         "@context": "https://schema.org",
@@ -101,13 +211,7 @@ const pricingColor: Record<string, string> = {
           "price": pricing === "免费" ? "0" : undefined,
           "priceCurrency": "USD"
         },
-        ...(rating ? [{
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": rating,
-            "bestRating": "5"
-          }
-        }] : [])
+        ...(rating ? { "aggregateRating": { "@type": "AggregateRating", "ratingValue": rating, "bestRating": "5" } } : {})
       }
     ])} />
   </article>
