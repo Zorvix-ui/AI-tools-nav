@@ -50,13 +50,13 @@ const related = tools
 // Star render
 function starHTML(r: number) {
   const full = Math.floor(r), half = r - full >= 0.5;
-  let s = "";
+  let s = `<span role="img" aria-label="评分${r}/5">`;
   for (let i = 0; i < 5; i++) {
     if (i < full) s += '<span class="text-amber-400">★</span>';
     else if (i === full && half) s += '<span class="text-amber-400">★</span>';
     else s += '<span class="text-gray-300">★</span>';
   }
-  return s;
+  return s + '</span>';
 }
 const seoTitle = `${name}是什么？功能、价格、使用教程_${new Date().getFullYear()}`;
 ---

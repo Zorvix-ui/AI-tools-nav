@@ -35,7 +35,7 @@ const regionColor = region === "国内" ? "bg-red-100 text-red-700" : "bg-indigo
     ))}
   </div>
   {rating && (
-    <div class="flex items-center gap-1 mt-3 text-sm text-yellow-500">
+    <div class="flex items-center gap-1 mt-3 text-sm text-yellow-500" role="img" aria-label={`评分${rating}/5`}>
       {"★".repeat(Math.floor(rating))}{"☆".repeat(5 - Math.floor(rating))}
       <span class="text-gray-400 text-xs ml-1">{rating}</span>
     </div>
