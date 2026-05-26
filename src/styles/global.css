@@ -61,24 +61,33 @@
 
   /* ── Tables ── */
   .prose-tool table {
-    @apply w-full border-collapse mb-6 text-sm rounded-lg overflow-hidden;
+    @apply w-full border-collapse mb-6 text-sm rounded-xl overflow-hidden shadow-sm;
   }
   .prose-tool thead {
-    @apply bg-gray-50;
+    @apply bg-gray-100;
   }
   .prose-tool thead th {
-    @apply text-left px-4 py-3 font-semibold text-gray-600 text-xs uppercase tracking-wider border-b-2 border-gray-200;
+    @apply text-left px-4 py-3.5 font-bold text-gray-700 text-xs uppercase tracking-wider border-b border-gray-200;
+  }
+  .prose-tool thead th:first-child {
+    @apply rounded-tl-xl;
+  }
+  .prose-tool thead th:last-child {
+    @apply rounded-tr-xl;
   }
   .prose-tool tbody td {
-    @apply px-4 py-3 text-gray-700 border-b border-gray-100;
+    @apply px-4 py-3 text-gray-600 border-b border-gray-50;
   }
   .prose-tool tbody tr:last-child td {
     @apply border-b-0;
   }
+  .prose-tool tbody tr:nth-child(even) {
+    @apply bg-gray-50/50;
+  }
   .prose-tool tbody tr:hover {
-    @apply bg-blue-50/30;
+    @apply bg-blue-50/50;
   }
   .prose-tool tbody tr td:first-child {
-    @apply font-medium text-gray-900;
+    @apply font-semibold text-gray-800;
   }
 }
