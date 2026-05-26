@@ -1,18 +1,17 @@
 export const categories = [
-  { slug: "chat", name: "AI对话", emoji: "💬", desc: "ChatGPT、DeepSeek等大语言模型对话助手" },
-  { slug: "image", name: "AI绘画", emoji: "🎨", desc: "Midjourney、即梦等图像生成工具" },
-  { slug: "video", name: "AI视频", emoji: "🎬", desc: "Sora、可灵等视频生成工具" },
-  { slug: "code", name: "AI编程", emoji: "💻", desc: "Cursor、Copilot等编程开发助手" },
-  { slug: "audio", name: "AI音频", emoji: "🎵", desc: "Suno、ElevenLabs等音乐语音工具" },
-  { slug: "search", name: "AI搜索", emoji: "🔍", desc: "Perplexity等新一代AI搜索引擎" },
-  { slug: "app-builder", name: "应用构建", emoji: "⚡", desc: "Bolt、v0等自然语言生成应用工具" },
-  { slug: "productivity", name: "效率办公", emoji: "📊", desc: "AI驱动的办公与效率工具" },
+  { slug: "collaboration", name: "协作办公", emoji: "🤝", desc: "飞书、Notion等团队文档与沟通协作工具" },
+  { slug: "marketing", name: "营销增长", emoji: "📈", desc: "HubSpot、ConvertKit等自动化营销获客平台" },
+  { slug: "design", name: "设计创意", emoji: "🎯", desc: "Figma、Canva等UI/UX与平面设计工具" },
+  { slug: "analytics", name: "数据分析", emoji: "📊", desc: "Tableau、神策等BI与用户行为分析平台" },
+  { slug: "engineering", name: "研发效能", emoji: "⚙️", desc: "GitHub、Jira等代码托管与项目协作平台" },
+  { slug: "crm", name: "客户管理", emoji: "👥", desc: "Salesforce、纷享销客等CRM与销售管理工具" },
+  { slug: "hr-finance", name: "财税人事", emoji: "💰", desc: "用友、金蝶等财务管理与HR系统" },
+  { slug: "ecommerce", name: "电商零售", emoji: "🛒", desc: "Shopify、有赞等开店与电商运营平台" },
 ];
 
 export const siteConfig = {
-  name: "AI工具导航",
-  tagline: "2026年最全AI工具排行榜 — 国内外分类 · 真实排名",
-  description: "精选50+AI工具，按国内国外分类，涵盖对话、绘画、视频、编程、音频、搜索、应用构建、效率办公八大品类。基于市场数据真实排名，持续更新。",
+  name: "SaaS工具导航",
+  tagline: "2026年精选SaaS工具排行榜 — 企业级软件选购指南",
+  description: "精选60+SaaS工具，涵盖协作办公、营销增长、设计创意、数据分析、研发效能、客户管理、财税人事、电商零售八大品类。企业软件选购决策参考，基于市场数据真实排名。",
   email: "zorvix@163.com",
-  gtag: "G-XXXXXXXXXX",
 };

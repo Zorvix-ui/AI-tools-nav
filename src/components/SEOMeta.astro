@@ -39,7 +39,6 @@ const webSiteSchema = JSON.stringify({
 <meta name="description" content={description} />
 {keywords && <meta name="keywords" content={keywords} />}
 <link rel="canonical" href={pageUrl} />
-<meta name="baidu-site-verification" content="codeva-167tYRcfWo" />
 
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
@@ -63,13 +62,4 @@ const webSiteSchema = JSON.stringify({
 
 <script type="application/ld+json" set:html={webSiteSchema} />
 
-<!-- 百度统计 -->
-<script is:inline>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?5c9dae085d66583c3ec33dd38c337d3f";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
 </script>
