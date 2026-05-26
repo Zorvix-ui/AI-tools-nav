@@ -20,14 +20,14 @@ const { name, category, region, rank, description, url, pricing, rating, tags } 
 
 // Category theming
 const catTheme: Record<string, { gradient: string; icon: string; accent: string }> = {
-  chat: { gradient: "from-blue-500 to-indigo-600", icon: "💬", accent: "bg-blue-500" },
-  code: { gradient: "from-emerald-500 to-teal-600", icon: "💻", accent: "bg-emerald-500" },
-  image: { gradient: "from-purple-500 to-pink-600", icon: "🎨", accent: "bg-purple-500" },
-  video: { gradient: "from-rose-500 to-red-600", icon: "🎬", accent: "bg-rose-500" },
-  audio: { gradient: "from-fuchsia-500 to-violet-600", icon: "🎵", accent: "bg-fuchsia-500" },
-  search: { gradient: "from-cyan-500 to-blue-600", icon: "🔍", accent: "bg-cyan-500" },
-  productivity: { gradient: "from-amber-500 to-orange-600", icon: "⚡", accent: "bg-amber-500" },
-  "app-builder": { gradient: "from-indigo-500 to-violet-600", icon: "🧩", accent: "bg-indigo-500" },
+  chat: { gradient: "from-blue-600 to-indigo-700", icon: "💬", accent: "bg-blue-500" },
+  code: { gradient: "from-emerald-600 to-teal-700", icon: "💻", accent: "bg-emerald-500" },
+  image: { gradient: "from-purple-600 to-pink-600", icon: "🎨", accent: "bg-purple-500" },
+  video: { gradient: "from-rose-600 to-red-600", icon: "🎬", accent: "bg-rose-500" },
+  audio: { gradient: "from-fuchsia-600 to-violet-600", icon: "🎵", accent: "bg-fuchsia-500" },
+  search: { gradient: "from-cyan-600 to-blue-600", icon: "🔍", accent: "bg-cyan-500" },
+  productivity: { gradient: "from-amber-600 to-orange-600", icon: "⚡", accent: "bg-amber-500" },
+  "app-builder": { gradient: "from-indigo-600 to-violet-600", icon: "🧩", accent: "bg-indigo-500" },
 };
 const theme = catTheme[category] || catTheme.chat;
 
