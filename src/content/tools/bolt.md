@@ -1,15 +1,19 @@
 ---
-name: "Bolt.new"
-category: "app-builder"
-region: "国外"
+name: Bolt.new
+category: app-builder
+region: 国外
 rank: 1
-description: "自然语言生成完整应用，支持全栈开发，一句话就能出可运行的Web应用。"
-url: "https://bolt.new"
-pricing: "免费增值"
+description: 一句话生成一个网站，真的能跑。产品原型验证的核武器，想法到可用应用只要几分钟。
+url: 'https://bolt.new'
+pricing: 免费增值
 rating: 4.7
-tags: ["全栈", "应用生成", "Web", "快速原型"]
+tags:
+  - 全栈
+  - 应用生成
+  - Web
+  - 快速原型
 featured: true
-publishDate: 2026-02-05
+publishDate: 2026-02-05T00:00:00.000Z
 ---
 
 ## 简介

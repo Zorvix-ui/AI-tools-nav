@@ -1,15 +1,19 @@
 ---
-name: "腾讯混元生图"
-category: "image"
-region: "国内"
+name: 腾讯混元生图
+category: image
+region: 国内
 rank: 5
-description: "腾讯出品，AI写真和风格化能力突出，社交分享体验好。"
-url: "https://hunyuan.tencent.com"
-pricing: "免费"
-rating: 4.0
-tags: ["腾讯", "AI写真", "风格化", "社交"]
+description: 腾讯出品，微信小程序就能画。自拍转写真、照片改风格，朋友圈社交分享体验最好。
+url: 'https://hunyuan.tencent.com'
+pricing: 免费
+rating: 4
+tags:
+  - 腾讯
+  - AI写真
+  - 风格化
+  - 社交
 featured: false
-publishDate: 2026-02-05
+publishDate: 2026-02-05T00:00:00.000Z
 ---
 
 ## 简介

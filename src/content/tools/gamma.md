@@ -1,15 +1,19 @@
 ---
-name: "Gamma"
-category: "productivity"
-region: "国外"
+name: Gamma
+category: productivity
+region: 国外
 rank: 2
-description: "AI原生PPT和演示文档工具，一句话生成精美演示文稿，模板精致专业。"
-url: "https://gamma.app"
-pricing: "免费增值"
+description: AI做PPT最强工具，一句话生成精美演示。模板比同事手做的还好看，汇报再也不熬夜改排版。
+url: 'https://gamma.app'
+pricing: 免费增值
 rating: 4.5
-tags: ["PPT", "演示", "文档", "AI生成"]
+tags:
+  - PPT
+  - 演示
+  - 文档
+  - AI生成
 featured: false
-publishDate: 2026-01-25
+publishDate: 2026-01-25T00:00:00.000Z
 ---
 
 ## 简介

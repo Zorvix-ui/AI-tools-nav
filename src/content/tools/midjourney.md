@@ -1,15 +1,20 @@
 ---
-name: "Midjourney"
-category: "image"
-region: "国外"
+name: Midjourney
+category: image
+region: 国外
 rank: 1
-description: "AI绘画天花板，V7版本在写实和艺术风格上无可匹敌，设计师首选。"
-url: "https://www.midjourney.com"
-pricing: "付费"
+description: AI绘画的奔驰，写实质感其他工具追不上。设计师出图首选，V7版本细节炸裂。
+url: 'https://www.midjourney.com'
+pricing: 付费
 rating: 4.9
-tags: ["绘画", "写实", "艺术风格", "设计师", "V7"]
+tags:
+  - 绘画
+  - 写实
+  - 艺术风格
+  - 设计师
+  - V7
 featured: true
-publishDate: 2026-01-15
+publishDate: 2026-01-15T00:00:00.000Z
 ---
 
 ## 简介

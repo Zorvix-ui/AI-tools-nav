@@ -1,15 +1,20 @@
 ---
-name: "可灵"
-category: "video"
-region: "国内"
+name: 可灵
+category: video
+region: 国内
 rank: 1
-description: "快手出品，国内AI视频质量天花板，电商带货+短视频创作者首选。"
-url: "https://kling.kuaishou.com"
-pricing: "免费增值"
+description: 国内AI视频天花板，最长能出2分钟。电商带货视频一键生成，快手创作者标配。
+url: 'https://kling.kuaishou.com'
+pricing: 免费增值
 rating: 4.7
-tags: ["视频生成", "电商", "图生视频", "文生视频", "快手"]
+tags:
+  - 视频生成
+  - 电商
+  - 图生视频
+  - 文生视频
+  - 快手
 featured: true
-publishDate: 2026-02-17
+publishDate: 2026-02-17T00:00:00.000Z
 ---
 
 ## 简介

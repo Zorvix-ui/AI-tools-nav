@@ -1,15 +1,19 @@
 ---
-name: "DeepSeek Coder"
-category: "code"
-region: "国内"
+name: DeepSeek Coder
+category: code
+region: 国内
 rank: 2
-description: "开源免费AI编程模型，代码理解和生成能力顶尖，API价格极低，可本地部署。"
-url: "https://chat.deepseek.com"
-pricing: "免费"
+description: 开源编程模型，API便宜还能自己部署。公司采购不用走审批，开发者自己就能集成。
+url: 'https://chat.deepseek.com'
+pricing: 免费
 rating: 4.6
-tags: ["开源", "免费", "代码推理", "国产最强"]
+tags:
+  - 开源
+  - 免费
+  - 代码推理
+  - 国产最强
 featured: false
-publishDate: 2026-01-18
+publishDate: 2026-01-18T00:00:00.000Z
 ---
 
 ## 简介

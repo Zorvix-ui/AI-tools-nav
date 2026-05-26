@@ -1,15 +1,19 @@
 ---
-name: "NanoBanana"
-category: "image"
-region: "国外"
+name: NanoBanana
+category: image
+region: 国外
 rank: 4
-description: "Google出品，4K输出+文字渲染能力强，构图理解精准，生成速度极快。"
-url: "https://nanobanana.ai"
-pricing: "免费增值"
+description: Google出品，构图和文字渲染最稳。海报、菜单、带字的图片场景，别家画不好字它行。
+url: 'https://nanobanana.ai'
+pricing: 免费增值
 rating: 4.3
-tags: ["Google", "4K", "文字渲染", "速度快"]
+tags:
+  - Google
+  - 4K
+  - 文字渲染
+  - 速度快
 featured: false
-publishDate: 2026-02-01
+publishDate: 2026-02-01T00:00:00.000Z
 ---
 
 ## 简介

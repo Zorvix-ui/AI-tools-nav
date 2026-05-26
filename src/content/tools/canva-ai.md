@@ -1,15 +1,19 @@
 ---
-name: "Canva AI"
-category: "productivity"
-region: "国外"
+name: Canva AI
+category: productivity
+region: 国外
 rank: 3
-description: "Canva内置AI设计助手，一键生成海报/社交媒体图/视频，模板海量。"
-url: "https://www.canva.com"
-pricing: "免费增值"
+description: Canva内置AI，设计模板多到用不完。社交媒体图、海报、视频封面，不用学设计也能做出好东西。
+url: 'https://www.canva.com'
+pricing: 免费增值
 rating: 4.6
-tags: ["设计", "海报", "社交媒体", "模板"]
+tags:
+  - 设计
+  - 海报
+  - 社交媒体
+  - 模板
 featured: false
-publishDate: 2026-01-15
+publishDate: 2026-01-15T00:00:00.000Z
 ---
 
 ## 简介

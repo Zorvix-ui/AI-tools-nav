@@ -1,15 +1,20 @@
 ---
-name: "Claude"
-category: "chat"
-region: "国外"
+name: Claude
+category: chat
+region: 国外
 rank: 2
-description: "Anthropic出品，安全性最强，写作质量一线的对话AI，代码能力长期霸榜SWE-bench。"
-url: "https://claude.ai"
-pricing: "免费增值"
+description: Anthropic出品，写东西最像真人，代码能力霸榜。适合写论文、审合同、重构代码等对准确性要求高的场景。
+url: 'https://claude.ai'
+pricing: 免费增值
 rating: 4.8
-tags: ["安全", "写作", "代码", "长文档", "Claude Code"]
+tags:
+  - 安全
+  - 写作
+  - 代码
+  - 长文档
+  - Claude Code
 featured: true
-publishDate: 2026-02-05
+publishDate: 2026-02-05T00:00:00.000Z
 ---
 
 ## 简介

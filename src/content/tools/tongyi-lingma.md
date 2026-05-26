@@ -1,15 +1,19 @@
 ---
-name: "通义灵码"
-category: "code"
-region: "国内"
+name: 通义灵码
+category: code
+region: 国内
 rank: 3
-description: "阿里出品，深度集成VS Code和JetBrains，中文开发环境体验最佳，免费使用。"
-url: "https://tongyi.aliyun.com/lingma"
-pricing: "免费"
+description: 阿里出品，中文开发环境体验第一。VS Code和JetBrains都能装，阿里云开发者生态打通。
+url: 'https://tongyi.aliyun.com/lingma'
+pricing: 免费
 rating: 4.2
-tags: ["阿里", "VS Code", "中文", "免费"]
+tags:
+  - 阿里
+  - VS Code
+  - 中文
+  - 免费
 featured: false
-publishDate: 2026-01-28
+publishDate: 2026-01-28T00:00:00.000Z
 ---
 
 ## 简介

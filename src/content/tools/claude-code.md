@@ -1,15 +1,19 @@
 ---
-name: "Claude Code"
-category: "code"
-region: "国外"
+name: Claude Code
+category: code
+region: 国外
 rank: 2
-description: "Anthropic出品，2026年占54%AI编码市场份额，终端原生、自主性强。"
-url: "https://claude.ai"
-pricing: "付费"
+description: Anthropic的终端编程助手，54%开发者市场份额。命令行里直接指挥AI干活，自主修Bug一把好手。
+url: 'https://claude.ai'
+pricing: 付费
 rating: 4.9
-tags: ["终端", "自主编程", "Anthropic", "市场第一"]
+tags:
+  - 终端
+  - 自主编程
+  - Anthropic
+  - 市场第一
 featured: true
-publishDate: 2026-01-15
+publishDate: 2026-01-15T00:00:00.000Z
 ---
 
 ## 简介

@@ -1,15 +1,20 @@
 ---
-name: "Cursor"
-category: "code"
-region: "国外"
+name: Cursor
+category: code
+region: 国外
 rank: 1
-description: "AI编程编辑器之王，基于VS Code深度改造，Tab自动补全+多文件编辑革命性体验。"
-url: "https://cursor.com"
-pricing: "免费增值"
+description: 程序员的新欢，写代码像有个人在旁边帮你按Tab。改Bug、重构、写文档全在编辑器里完成。
+url: 'https://cursor.com'
+pricing: 免费增值
 rating: 4.9
-tags: ["编程", "IDE", "代码补全", "VS Code", "多文件编辑"]
+tags:
+  - 编程
+  - IDE
+  - 代码补全
+  - VS Code
+  - 多文件编辑
 featured: true
-publishDate: 2026-03-01
+publishDate: 2026-03-01T00:00:00.000Z
 ---
 
 ## 简介

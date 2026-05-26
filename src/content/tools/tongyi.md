@@ -1,15 +1,20 @@
 ---
-name: "通义千问"
-category: "chat"
-region: "国内"
+name: 通义千问
+category: chat
+region: 国内
 rank: 3
-description: "阿里出品，开源模型性能强劲，办公和企业协同能力强，月活1.66亿排名第二。"
-url: "https://tongyi.aliyun.com"
-pricing: "免费增值"
+description: 阿里出品，企业办公场景最强。绑钉钉，企业协作、数据分析、文档处理一条龙。
+url: 'https://tongyi.aliyun.com'
+pricing: 免费增值
 rating: 4.5
-tags: ["开源", "办公", "多语言", "企业", "阿里生态"]
+tags:
+  - 开源
+  - 办公
+  - 多语言
+  - 企业
+  - 阿里生态
 featured: false
-publishDate: 2026-01-18
+publishDate: 2026-01-18T00:00:00.000Z
 ---
 
 ## 简介

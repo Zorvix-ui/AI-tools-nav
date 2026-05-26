@@ -1,15 +1,20 @@
 ---
-name: "豆包"
-category: "chat"
-region: "国内"
+name: 豆包
+category: chat
+region: 国内
 rank: 2
-description: "字节跳动出品，国内用户量第一（3.45亿MAU），多模态理解+创意写作全能选手。"
-url: "https://www.doubao.com"
-pricing: "免费"
+description: 国内最多人用的AI，写文案翻译拍照识图都行。日常随身助手，完全免费无任何付费墙。
+url: 'https://www.doubao.com'
+pricing: 免费
 rating: 4.7
-tags: ["多模态", "写作", "生活助手", "AI搜索", "语音"]
+tags:
+  - 多模态
+  - 写作
+  - 生活助手
+  - AI搜索
+  - 语音
 featured: true
-publishDate: 2026-01-11
+publishDate: 2026-01-11T00:00:00.000Z
 ---
 
 ## 简介

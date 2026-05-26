@@ -1,15 +1,19 @@
 ---
-name: "ElevenLabs"
-category: "audio"
-region: "国外"
+name: ElevenLabs
+category: audio
+region: 国外
 rank: 3
-description: "全球最强AI语音合成/TTS，仅需数秒录音即可完美克隆人声，多语言支持。"
-url: "https://elevenlabs.io"
-pricing: "免费增值"
+description: AI语音克隆全球最强。录几秒声音就能完美复刻，配音、有声书、多语言内容本地化必备。
+url: 'https://elevenlabs.io'
+pricing: 免费增值
 rating: 4.8
-tags: ["TTS", "语音克隆", "配音", "多语言"]
+tags:
+  - TTS
+  - 语音克隆
+  - 配音
+  - 多语言
 featured: false
-publishDate: 2026-01-15
+publishDate: 2026-01-15T00:00:00.000Z
 ---
 
 ## 简介

@@ -1,15 +1,20 @@
 ---
-name: "通义万相"
-category: "image"
-region: "国内"
+name: 通义万相
+category: image
+region: 国内
 rank: 2
-description: "阿里出品，企业级稳定性，虚拟模特功能适合电商，与阿里云深度整合。"
-url: "https://tongyi.aliyun.com/wanxiang"
-pricing: "免费增值"
+description: 阿里出品，电商图片场景最强。虚拟模特换装、商品图批量生成，开网店的都在用。
+url: 'https://tongyi.aliyun.com/wanxiang'
+pricing: 免费增值
 rating: 4.4
-tags: ["阿里", "电商", "虚拟模特", "企业", "稳定"]
+tags:
+  - 阿里
+  - 电商
+  - 虚拟模特
+  - 企业
+  - 稳定
 featured: false
-publishDate: 2026-01-18
+publishDate: 2026-01-18T00:00:00.000Z
 ---
 
 ## 简介

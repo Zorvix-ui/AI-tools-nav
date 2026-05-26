@@ -1,15 +1,20 @@
 ---
-name: "文心快码"
-category: "code"
-region: "国内"
+name: 文心快码
+category: code
+region: 国内
 rank: 1
-description: "百度出品，IDC评测国内第一(8项满分)，唯一具备完整Coding Agent形态，企业级。"
-url: "https://comate.baidu.com"
-pricing: "免费"
+description: 百度出品，8项IDC评测满分。唯一完整Coding Agent形态，企业级团队协作支持。
+url: 'https://comate.baidu.com'
+pricing: 免费
 rating: 4.7
-tags: ["百度", "Agent", "IDC第一", "企业", "SPEC模式"]
+tags:
+  - 百度
+  - Agent
+  - IDC第一
+  - 企业
+  - SPEC模式
 featured: true
-publishDate: 2026-01-08
+publishDate: 2026-01-08T00:00:00.000Z
 ---
 
 ## 简介

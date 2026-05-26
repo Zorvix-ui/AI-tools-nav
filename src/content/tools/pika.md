@@ -1,15 +1,19 @@
 ---
-name: "Pika"
-category: "video"
-region: "国外"
+name: Pika
+category: video
+region: 国外
 rank: 3
-description: "轻量级AI视频工具，界面简洁友好，特效功能丰富，适合新手。"
-url: "https://pika.art"
-pricing: "免费增值"
+description: 轻量AI视频工具，界面像美图秀秀一样简单。特效滤镜丰富，新手入门无压力。
+url: 'https://pika.art'
+pricing: 免费增值
 rating: 4.2
-tags: ["轻量", "特效", "新手", "快速"]
+tags:
+  - 轻量
+  - 特效
+  - 新手
+  - 快速
 featured: false
-publishDate: 2026-01-20
+publishDate: 2026-01-20T00:00:00.000Z
 ---
 
 ## 简介

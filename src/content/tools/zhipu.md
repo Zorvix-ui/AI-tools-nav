@@ -1,15 +1,19 @@
 ---
-name: "智谱清言"
-category: "chat"
-region: "国内"
+name: 智谱清言
+category: chat
+region: 国内
 rank: 7
-description: "智谱AI+清华大学联合开发，国产大模型先行者，GLM系列模型技术底蕴深厚。"
-url: "https://chatglm.cn"
-pricing: "免费增值"
-rating: 4.0
-tags: ["学术", "GLM", "开源", "清华大学"]
+description: 清华系技术派，GLM模型自研底子最厚。科研和学术场景首选，代码和逻辑推理硬核。
+url: 'https://chatglm.cn'
+pricing: 免费增值
+rating: 4
+tags:
+  - 学术
+  - GLM
+  - 开源
+  - 清华大学
 featured: false
-publishDate: 2026-02-10
+publishDate: 2026-02-10T00:00:00.000Z
 ---
 
 ## 简介

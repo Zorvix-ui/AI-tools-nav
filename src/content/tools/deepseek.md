@@ -1,15 +1,20 @@
 ---
-name: "DeepSeek"
-category: "chat"
-region: "国内"
+name: DeepSeek
+category: chat
+region: 国内
 rank: 1
-description: "国产推理之王，开源策略吸引大量开发者，数学代码能力极强，API性价比无敌。"
-url: "https://chat.deepseek.com"
-pricing: "免费"
+description: 推理最强的国产大模型，API便宜到按分算。程序员和研究员人手一个，开源能自己部署。
+url: 'https://chat.deepseek.com'
+pricing: 免费
 rating: 4.8
-tags: ["推理", "开源", "代码", "数学", "高性价比"]
+tags:
+  - 推理
+  - 开源
+  - 代码
+  - 数学
+  - 高性价比
 featured: true
-publishDate: 2026-01-12
+publishDate: 2026-01-12T00:00:00.000Z
 ---
 
 ## 简介

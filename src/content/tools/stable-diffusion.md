@@ -1,15 +1,20 @@
 ---
-name: "Stable Diffusion"
-category: "image"
-region: "国外"
+name: Stable Diffusion
+category: image
+region: 国外
 rank: 3
-description: "最强开源AI绘画模型，支持本地部署，完全免费无限制，可玩性最高。"
-url: "https://stability.ai"
-pricing: "免费"
+description: 最强开源绘画模型，免费无限制。能装在自己电脑上跑，炼丹玩家和隐私敏感场景唯一选择。
+url: 'https://stability.ai'
+pricing: 免费
 rating: 4.5
-tags: ["开源", "本地部署", "ControlNet", "LoRA", "定制"]
+tags:
+  - 开源
+  - 本地部署
+  - ControlNet
+  - LoRA
+  - 定制
 featured: false
-publishDate: 2026-01-10
+publishDate: 2026-01-10T00:00:00.000Z
 ---
 
 ## 简介

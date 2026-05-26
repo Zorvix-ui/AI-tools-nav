@@ -1,15 +1,19 @@
 ---
-name: "Windsurf"
-category: "code"
-region: "国外"
+name: Windsurf
+category: code
+region: 国外
 rank: 4
-description: "Codeium出品，自主Agent能力超强，Cascade实时上下文感知，免费版体验好。"
-url: "https://windsurf.com"
-pricing: "免费增值"
+description: Codeium出品，自主Agent能力强。实时感知项目上下文，免费版体验也好，Cursor的强力对手。
+url: 'https://windsurf.com'
+pricing: 免费增值
 rating: 4.4
-tags: ["免费", "Agent", "Cascade", "自主执行"]
+tags:
+  - 免费
+  - Agent
+  - Cascade
+  - 自主执行
 featured: false
-publishDate: 2026-02-01
+publishDate: 2026-02-01T00:00:00.000Z
 ---
 
 ## 简介

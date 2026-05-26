@@ -1,15 +1,19 @@
 ---
-name: "Gemini"
-category: "chat"
-region: "国外"
+name: Gemini
+category: chat
+region: 国外
 rank: 3
-description: "Google多模态旗舰，视频理解和跨模态推理优势明显，深度整合Google生态。"
-url: "https://gemini.google.com"
-pricing: "免费增值"
+description: Google出品，看视频、读图片、搜信息全能干。绑着Gmail和YouTube，Google全家桶用户闭眼入。
+url: 'https://gemini.google.com'
+pricing: 免费增值
 rating: 4.6
-tags: ["多模态", "视频理解", "Google生态", "搜索整合"]
+tags:
+  - 多模态
+  - 视频理解
+  - Google生态
+  - 搜索整合
 featured: false
-publishDate: 2026-01-20
+publishDate: 2026-01-20T00:00:00.000Z
 ---
 
 ## 简介

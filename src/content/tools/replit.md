@@ -1,15 +1,19 @@
 ---
-name: "Replit"
-category: "app-builder"
-region: "国外"
+name: Replit
+category: app-builder
+region: 国外
 rank: 4
-description: "在线编程+AI+部署一体化平台，Agent模式可自主构建和部署应用。"
-url: "https://replit.com"
-pricing: "免费增值"
+description: 编程+AI+部署一体，浏览器里搞定一切。Agent模式能自己写代码自己部署，全栈新手的游乐场。
+url: 'https://replit.com'
+pricing: 免费增值
 rating: 4.3
-tags: ["在线IDE", "全栈", "部署", "协作"]
+tags:
+  - 在线IDE
+  - 全栈
+  - 部署
+  - 协作
 featured: false
-publishDate: 2026-02-01
+publishDate: 2026-02-01T00:00:00.000Z
 ---
 
 ## 简介

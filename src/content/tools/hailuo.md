@@ -1,15 +1,19 @@
 ---
-name: "海螺AI"
-category: "audio"
-region: "国内"
+name: 海螺AI
+category: audio
+region: 国内
 rank: 1
-description: "MiniMax出品，国产最佳AI音频工具，语音合成和音乐生成能力均衡。"
-url: "https://hailuoai.com"
-pricing: "免费增值"
+description: MiniMax出品，AI语音和音乐都行。配音、有声书、播客制作，声音自然度国产最佳。
+url: 'https://hailuoai.com'
+pricing: 免费增值
 rating: 4.2
-tags: ["国产", "语音", "音乐", "MiniMax"]
+tags:
+  - 国产
+  - 语音
+  - 音乐
+  - MiniMax
 featured: false
-publishDate: 2026-02-01
+publishDate: 2026-02-01T00:00:00.000Z
 ---
 
 ## 简介

@@ -1,15 +1,19 @@
 ---
-name: "Udio"
-category: "audio"
-region: "国外"
+name: Udio
+category: audio
+region: 国外
 rank: 2
-description: "48kHz高保真AI音乐，音质超越Suno，支持分轨下载和专业混音。"
-url: "https://www.udio.com"
-pricing: "免费增值"
+description: 音质最高的AI音乐，48kHz高保真。追求音质听得出来差别，支持分轨下载专业混音。
+url: 'https://www.udio.com'
+pricing: 免费增值
 rating: 4.6
-tags: ["高保真", "分轨", "专业", "混音"]
+tags:
+  - 高保真
+  - 分轨
+  - 专业
+  - 混音
 featured: false
-publishDate: 2026-01-20
+publishDate: 2026-01-20T00:00:00.000Z
 ---
 
 ## 简介

@@ -1,15 +1,20 @@
 ---
-name: "即梦"
-category: "image"
-region: "国内"
+name: 即梦
+category: image
+region: 国内
 rank: 1
-description: "字节旗下AI绘画，国内使用率最高，中文Prompt理解最好，一键出图零门槛。"
-url: "https://jimeng.jianying.com"
-pricing: "免费增值"
+description: 国内最火的AI绘画，中文一句话就能出图。小红书配图、朋友圈封面、短视频素材，新手30秒上手。
+url: 'https://jimeng.jianying.com'
+pricing: 免费增值
 rating: 4.6
-tags: ["绘画", "中文Prompt", "社交分享", "模板", "字节系"]
+tags:
+  - 绘画
+  - 中文Prompt
+  - 社交分享
+  - 模板
+  - 字节系
 featured: true
-publishDate: 2026-01-16
+publishDate: 2026-01-16T00:00:00.000Z
 ---
 
 ## 简介

@@ -1,15 +1,19 @@
 ---
-name: "Sora"
-category: "video"
-region: "国外"
+name: Sora
+category: video
+region: 国外
 rank: 1
-description: "OpenAI出品，公认最强的AI视频生成模型，画质和真实感秒杀其他工具。"
-url: "https://openai.com/sora"
-pricing: "付费"
+description: AI视频的iPhone时刻，画质和真实感断层领先。专业影视概念和广告片创作，质量没对手。
+url: 'https://openai.com/sora'
+pricing: 付费
 rating: 4.8
-tags: ["视频生成", "OpenAI", "最高画质", "真实感"]
+tags:
+  - 视频生成
+  - OpenAI
+  - 最高画质
+  - 真实感
 featured: true
-publishDate: 2026-01-10
+publishDate: 2026-01-10T00:00:00.000Z
 ---
 
 ## 简介

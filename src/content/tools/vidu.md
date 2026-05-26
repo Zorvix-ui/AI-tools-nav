@@ -1,15 +1,19 @@
 ---
-name: "Vidu"
-category: "video"
-region: "国内"
+name: Vidu
+category: video
+region: 国内
 rank: 3
-description: "生数科技出品，在视频一致性和动态连贯性方面表现出色。"
-url: "https://www.vidu.cn"
-pricing: "免费增值"
+description: 生数科技出品，角色一致性做得好。同一角色在不同镜头里不崩脸，适合做系列视频。
+url: 'https://www.vidu.cn'
+pricing: 免费增值
 rating: 4.3
-tags: ["国产", "一致性", "动态", "快速"]
+tags:
+  - 国产
+  - 一致性
+  - 动态
+  - 快速
 featured: false
-publishDate: 2026-01-25
+publishDate: 2026-01-25T00:00:00.000Z
 ---
 
 ## 简介

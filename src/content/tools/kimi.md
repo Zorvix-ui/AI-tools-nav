@@ -1,15 +1,20 @@
 ---
-name: "Kimi"
-category: "chat"
-region: "国内"
+name: Kimi
+category: chat
+region: 国内
 rank: 4
-description: "月之暗面出品，长文本处理能力突出，支持20万字一次性处理，学生和研究员首选。"
-url: "https://kimi.moonshot.cn"
-pricing: "免费增值"
+description: 一口气读20万字的长文杀手。大学生看论文、律师看合同、分析师看财报，丢进去直接问。
+url: 'https://kimi.moonshot.cn'
+pricing: 免费增值
 rating: 4.4
-tags: ["长文本", "论文", "阅读", "研究", "法律"]
+tags:
+  - 长文本
+  - 论文
+  - 阅读
+  - 研究
+  - 法律
 featured: false
-publishDate: 2026-02-05
+publishDate: 2026-02-05T00:00:00.000Z
 ---
 
 ## 简介

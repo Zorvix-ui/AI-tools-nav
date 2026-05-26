@@ -1,15 +1,19 @@
 ---
-name: "讯飞星火"
-category: "chat"
-region: "国内"
+name: 讯飞星火
+category: chat
+region: 国内
 rank: 8
-description: "科大讯飞出品，语音识别和语音合成能力突出，教育场景专精。"
-url: "https://xinghuo.xfyun.cn"
-pricing: "免费增值"
+description: 科大讯飞出品，语音识别中国第一。做课件、练口语、开会上字幕，教育场景没对手。
+url: 'https://xinghuo.xfyun.cn'
+pricing: 免费增值
 rating: 3.9
-tags: ["语音", "教育", "翻译", "科大讯飞"]
+tags:
+  - 语音
+  - 教育
+  - 翻译
+  - 科大讯飞
 featured: false
-publishDate: 2026-02-12
+publishDate: 2026-02-12T00:00:00.000Z
 ---
 
 ## 简介

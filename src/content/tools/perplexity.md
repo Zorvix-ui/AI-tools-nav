@@ -1,15 +1,19 @@
 ---
-name: "Perplexity"
-category: "search"
-region: "国外"
+name: Perplexity
+category: search
+region: 国外
 rank: 1
-description: "AI搜索引擎标杆，带引用来源的精准答案，深度研究模式自动多轮搜索。"
-url: "https://www.perplexity.ai"
-pricing: "免费增值"
+description: AI搜索的ChatGPT时刻。每次回答都带引用来源，不会瞎编。做调研、查资料的终极工具。
+url: 'https://www.perplexity.ai'
+pricing: 免费增值
 rating: 4.7
-tags: ["AI搜索", "引用", "深度研究", "实时"]
+tags:
+  - AI搜索
+  - 引用
+  - 深度研究
+  - 实时
 featured: true
-publishDate: 2026-01-12
+publishDate: 2026-01-12T00:00:00.000Z
 ---
 
 ## 简介

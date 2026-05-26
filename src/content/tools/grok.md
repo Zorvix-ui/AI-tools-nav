@@ -1,15 +1,19 @@
 ---
-name: "Grok"
-category: "chat"
-region: "国外"
+name: Grok
+category: chat
+region: 国外
 rank: 4
-description: "xAI出品，风格大胆直接，少审查限制，编程能力强，X平台深度整合。"
-url: "https://x.ai"
-pricing: "免费增值"
+description: 马斯克的AI，说话不拐弯，图片生成无审查。X/Twitter深度玩家首选，风格大胆敢说。
+url: 'https://x.ai'
+pricing: 免费增值
 rating: 4.3
-tags: ["实时信息", "X整合", "编程", "少审查"]
+tags:
+  - 实时信息
+  - X整合
+  - 编程
+  - 少审查
 featured: false
-publishDate: 2026-02-01
+publishDate: 2026-02-01T00:00:00.000Z
 ---
 
 ## 简介

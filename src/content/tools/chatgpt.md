@@ -1,15 +1,20 @@
 ---
-name: "ChatGPT"
-category: "chat"
-region: "国外"
+name: ChatGPT
+category: chat
+region: 国外
 rank: 1
-description: "全球综合实力最强的对话AI，GPT-5.4多模态理解成熟，写作、推理、代码全能标杆。"
-url: "https://chat.openai.com"
-pricing: "免费增值"
+description: 全球第一的AI助手，写文章、写代码、做分析，一个对话框全搞定。设计师和打工人的生产力标配。
+url: 'https://chat.openai.com'
+pricing: 免费增值
 rating: 4.9
-tags: ["多模态", "深度研究", "代码", "写作", "GPTs"]
+tags:
+  - 多模态
+  - 深度研究
+  - 代码
+  - 写作
+  - GPTs
 featured: true
-publishDate: 2026-01-10
+publishDate: 2026-01-10T00:00:00.000Z
 ---
 
 ## 简介

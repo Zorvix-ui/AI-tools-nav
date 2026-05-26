@@ -1,15 +1,19 @@
 ---
-name: "文心一言"
-category: "chat"
-region: "国内"
+name: 文心一言
+category: chat
+region: 国内
 rank: 5
-description: "百度出品，中文理解和知识图谱能力强，国风内容专长，企业级应用支持。"
-url: "https://yiyan.baidu.com"
-pricing: "免费增值"
+description: 百度出品，中文理解最老牌。国学古文、诗词创作、国内知识查询，百度搜索无缝衔接。
+url: 'https://yiyan.baidu.com'
+pricing: 免费增值
 rating: 4.2
-tags: ["中文", "知识图谱", "百度生态", "企业"]
+tags:
+  - 中文
+  - 知识图谱
+  - 百度生态
+  - 企业
 featured: false
-publishDate: 2026-01-22
+publishDate: 2026-01-22T00:00:00.000Z
 ---
 
 ## 简介

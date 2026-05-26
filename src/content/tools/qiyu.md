@@ -1,15 +1,20 @@
 ---
-name: "奇域AI"
-category: "image"
-region: "国内"
+name: 奇域AI
+category: image
+region: 国内
 rank: 3
-description: "新中式美学专精，国风、古风绘画领域独树一帜，文创设计首选。"
-url: "https://www.qiyuai.com"
-pricing: "免费增值"
+description: 国风AI绘画天花板，专精新中式美学。汉服设计、文创图案、国潮插画，别的工具画不出这个味。
+url: 'https://www.qiyuai.com'
+pricing: 免费增值
 rating: 4.3
-tags: ["国风", "新中式", "文创", "古风", "风格专精"]
+tags:
+  - 国风
+  - 新中式
+  - 文创
+  - 古风
+  - 风格专精
 featured: false
-publishDate: 2026-02-01
+publishDate: 2026-02-01T00:00:00.000Z
 ---
 
 ## 简介

@@ -1,15 +1,19 @@
 ---
-name: "Lovable"
-category: "app-builder"
-region: "国外"
+name: Lovable
+category: app-builder
+region: 国外
 rank: 2
-description: "AI应用构建新秀，界面设计感强，从prompt生成精美UI和完整功能。"
-url: "https://lovable.dev"
-pricing: "免费增值"
+description: AI写应用里UI最漂亮的。生成的应用设计感在线，适合C端产品原型和MVP快速验证。
+url: 'https://lovable.dev'
+pricing: 免费增值
 rating: 4.5
-tags: ["UI设计", "应用生成", "精美", "全栈"]
+tags:
+  - UI设计
+  - 应用生成
+  - 精美
+  - 全栈
 featured: false
-publishDate: 2026-02-08
+publishDate: 2026-02-08T00:00:00.000Z
 ---
 
 ## 简介

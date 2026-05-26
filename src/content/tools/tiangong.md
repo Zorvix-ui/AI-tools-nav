@@ -1,15 +1,20 @@
 ---
-name: "天工AI"
-category: "chat"
-region: "国内"
+name: 天工AI
+category: chat
+region: 国内
 rank: 9
-description: "昆仑万维出品，多模态能力强，支持AI搜索、AI音乐、AI写作融合体验。"
-url: "https://www.tiangong.cn"
-pricing: "免费"
+description: 昆仑万维出品，AI搜索+AI音乐+AI写作全包。一个工具干三件事，不想装一堆App的好选择。
+url: 'https://www.tiangong.cn'
+pricing: 免费
 rating: 3.8
-tags: ["昆仑万维", "多模态", "写作", "音乐", "搜索"]
+tags:
+  - 昆仑万维
+  - 多模态
+  - 写作
+  - 音乐
+  - 搜索
 featured: false
-publishDate: 2026-02-08
+publishDate: 2026-02-08T00:00:00.000Z
 ---
 
 ## 简介

@@ -1,15 +1,19 @@
 ---
-name: "腾讯元宝"
-category: "chat"
-region: "国内"
+name: 腾讯元宝
+category: chat
+region: 国内
 rank: 6
-description: "腾讯出品，整合微信生态和腾讯信息源，支持创建智能体，多语言翻译。"
-url: "https://yuanbao.tencent.com"
-pricing: "免费"
+description: 腾讯出品，微信生态打通。公众号写作、智能体创建、多语言翻译，腾讯全家桶用户顺手用。
+url: 'https://yuanbao.tencent.com'
+pricing: 免费
 rating: 4.1
-tags: ["腾讯生态", "智能体", "翻译", "微信"]
+tags:
+  - 腾讯生态
+  - 智能体
+  - 翻译
+  - 微信
 featured: false
-publishDate: 2026-02-08
+publishDate: 2026-02-08T00:00:00.000Z
 ---
 
 ## 简介

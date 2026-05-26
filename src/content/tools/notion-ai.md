@@ -1,15 +1,19 @@
 ---
-name: "Notion AI"
-category: "productivity"
-region: "国外"
+name: Notion AI
+category: productivity
+region: 国外
 rank: 1
-description: "Notion内置AI，笔记和文档中直接使用AI，知识管理+AI无缝融合。"
-url: "https://www.notion.so/product/ai"
-pricing: "付费"
+description: Notion内置AI，记笔记的时候顺手用。写会议纪要、润色文章、翻译内容，知识管理+AI二合一。
+url: 'https://www.notion.so/product/ai'
+pricing: 付费
 rating: 4.4
-tags: ["笔记", "知识管理", "写作", "数据库"]
+tags:
+  - 笔记
+  - 知识管理
+  - 写作
+  - 数据库
 featured: false
-publishDate: 2026-01-20
+publishDate: 2026-01-20T00:00:00.000Z
 ---
 
 ## 简介

@@ -1,15 +1,19 @@
 ---
-name: "Seedance"
-category: "video"
-region: "国内"
+name: Seedance
+category: video
+region: 国内
 rank: 2
-description: "字节跳动出品，一张图+一句话生成多镜头序列视频，冯骥称地表最强。"
-url: "https://www.doubao.com"
-pricing: "免费增值"
+description: 字节出品，冯骥说它地表最强。一张图就能生成多镜头视频，短视频创作者兴奋剂。
+url: 'https://www.doubao.com'
+pricing: 免费增值
 rating: 4.6
-tags: ["字节", "多镜头", "原生音频", "地表最强"]
+tags:
+  - 字节
+  - 多镜头
+  - 原生音频
+  - 地表最强
 featured: true
-publishDate: 2026-02-06
+publishDate: 2026-02-06T00:00:00.000Z
 ---
 
 ## 简介

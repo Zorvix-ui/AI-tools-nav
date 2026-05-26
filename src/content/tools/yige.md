@@ -1,15 +1,19 @@
 ---
-name: "文心一格"
-category: "image"
-region: "国内"
+name: 文心一格
+category: image
+region: 国内
 rank: 4
-description: "百度出品，国风素材丰富，中文理解深，古诗词转图像能力强。"
-url: "https://yige.baidu.com"
-pricing: "免费增值"
-rating: 4.0
-tags: ["百度", "国风", "中文", "古诗"]
+description: 百度出品，古诗词转图片绝了。传统文化、国风插画、文博创意，国学底蕴最深。
+url: 'https://yige.baidu.com'
+pricing: 免费增值
+rating: 4
+tags:
+  - 百度
+  - 国风
+  - 中文
+  - 古诗
 featured: false
-publishDate: 2026-01-20
+publishDate: 2026-01-20T00:00:00.000Z
 ---
 
 ## 简介

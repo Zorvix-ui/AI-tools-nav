@@ -1,15 +1,19 @@
 ---
-name: "纳米AI搜索"
-category: "search"
-region: "国内"
+name: 纳米AI搜索
+category: search
+region: 国内
 rank: 1
-description: "360出品，国内AI搜索先行者，中文内容搜索覆盖广，免费使用。"
-url: "https://www.n.cn"
-pricing: "免费"
-rating: 4.0
-tags: ["360", "中文搜索", "免费", "全面"]
+description: 360出品，中文搜索覆盖最广的AI引擎。常规信息查询、新闻热点跟踪，免费够用。
+url: 'https://www.n.cn'
+pricing: 免费
+rating: 4
+tags:
+  - '360'
+  - 中文搜索
+  - 免费
+  - 全面
 featured: false
-publishDate: 2026-01-22
+publishDate: 2026-01-22T00:00:00.000Z
 ---
 
 ## 简介

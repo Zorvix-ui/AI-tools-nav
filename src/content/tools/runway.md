@@ -1,15 +1,19 @@
 ---
-name: "Runway"
-category: "video"
-region: "国外"
+name: Runway
+category: video
+region: 国外
 rank: 2
-description: "AI视频领域先驱，Gen-4模型功能全面，编辑能力最强。"
-url: "https://runwayml.com"
-pricing: "付费"
+description: AI视频老牌先驱，编辑能力最强。抠像、跟踪、调色一站式，视频后期工作流全包。
+url: 'https://runwayml.com'
+pricing: 付费
 rating: 4.6
-tags: ["视频编辑", "运动控制", "特效", "绿幕"]
+tags:
+  - 视频编辑
+  - 运动控制
+  - 特效
+  - 绿幕
 featured: true
-publishDate: 2026-01-15
+publishDate: 2026-01-15T00:00:00.000Z
 ---
 
 ## 简介
