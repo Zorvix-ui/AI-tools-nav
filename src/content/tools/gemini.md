@@ -1,38 +1,51 @@
 ---
-name: Gemini
-category: chat
-region: 国外
+name: "Gemini"
+category: "chat"
+region: "国外"
 rank: 3
-description: Google出品，看视频、读图片、搜信息全能干。绑着Gmail和YouTube，Google全家桶用户闭眼入。
-url: 'https://gemini.google.com'
-pricing: 免费增值
-rating: 4.6
-tags:
-  - 多模态
-  - 视频理解
-  - Google生态
-  - 搜索整合
+description: "Google出品，看视频、读图片、搜信息全能干。绑着Gmail和YouTube，Google全家桶用户闭眼入。"
+url: "https://gemini.google.com"
+pricing: "免费增值"
+rating: 4.5
+tags: ["多模态", "Google", "视频理解", "搜索", "云服务"]
 featured: false
-publishDate: 2026-01-20T00:00:00.000Z
+publishDate: 2026-02-06
 ---
 
 ## 简介
 
-Gemini 3.1是Google在多模态方向走得最远的模型。视频理解、跨模态推理有明显优势。与Google Workspace（Gmail、Docs、Sheets）深度集成，是办公场景的强力助手。
+Gemini是Google的多模态AI，能力最全面的选手。视频理解是独门绝技——扔个YouTube链接它能看懂视频里发生了什么。深度整合Gmail、Google Drive、YouTube，Google生态用户用起来无缝。
 
 ## 核心功能
 
-- **原生多模态**：图像、视频、音频统一分析
-- **Google搜索整合**：AI回答关联实时搜索结果
-- **Workspace集成**：Gmail/Docs/Sheets中直接调用
-- **百万token级输入**：超大上下文窗口
-- **免费额度充足**：基础版体验好
+- **视频理解**：上传视频或给YouTube链接，AI能看懂内容
+- **多模态输入**：文字、图片、视频、音频、代码全支持
+- **Google深度整合**：直接搜Gmail、读Google Drive文件
+- **超长上下文**：200万tokens，一次性处理海量信息
+- **Gemini Advanced**：付费版用最强模型
 
 ## 价格
 
-- 免费版：基础功能
-- Gemini Advanced($19.99/月)：含Google One AI Premium
+| 版本 | 价格 | 说明 |
+|------|------|------|
+| 免费版 | ¥0 | 基础模型 |
+| Advanced | Google One AI Premium $19.99/月 | 最强模型+2TB云存储 |
 
-## 适合谁用
+## 优势
 
-Google生态用户、视频内容分析需求者、多模态任务。如果你日常用Google全家桶，Gemini是效率最高的选择。
+- 🎥 **视频理解独一档**：看视频、总结内容、找片段
+- 🌐 **Google全家桶**：邮箱、云盘、日历AI一体化
+- 📏 **上下文最长**：200万tokens，一本书+10篇论文同时分析
+- 🆓 **免费版强**：比ChatGPT免费版能力更强
+
+## 劣势
+
+- ✍️ **写作不如Claude**：文风偏死板
+- 🇨🇳 **国内不可用**：需科学上网
+- 🎨 **中文生图弱**：不如国产工具
+
+## 适用场景
+
+- 📹 **视频内容分析**：长视频总结、教学视频重点提取
+- 📊 **企业办公**：Gmail+Drive+Calendar AI联动
+- 📚 **超大量信息处理**：同时分析多本书、论文、报告
