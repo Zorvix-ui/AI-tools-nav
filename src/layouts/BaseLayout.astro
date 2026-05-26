@@ -100,8 +100,19 @@ const { title, description, image, canonical, keywords } = Astro.props;
             <h3 class="text-white font-semibold mb-4">分类导航</h3>
             <div class="space-y-2">
               {categories.map((c) => (
-                <div><a href={`/categories/${c.slug}`} class="hover:text-white transition-colors text-sm">{c.name}</a></div>
+                <div><a href={`/categories/${c.slug}`} class="hover:text-white transition-colors text-sm">{c.emoji} {c.name}</a></div>
               ))}
+            </div>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">热门工具</h3>
+            <div class="space-y-2 text-sm">
+              <div><a href="/tools/chatgpt" class="hover:text-white transition-colors">ChatGPT</a></div>
+              <div><a href="/tools/claude" class="hover:text-white transition-colors">Claude</a></div>
+              <div><a href="/tools/deepseek" class="hover:text-white transition-colors">DeepSeek</a></div>
+              <div><a href="/tools/cursor" class="hover:text-white transition-colors">Cursor</a></div>
+              <div><a href="/tools/midjourney" class="hover:text-white transition-colors">Midjourney</a></div>
+              <div><a href="/tools/suno" class="hover:text-white transition-colors">Suno</a></div>
             </div>
           </div>
           <div>
@@ -109,6 +120,14 @@ const { title, description, image, canonical, keywords } = Astro.props;
             <div class="space-y-2 text-sm">
               <div>{siteConfig.tagline}</div>
               <div>📧 {siteConfig.email}</div>
+              <div>收录 50+ AI工具 · 持续更新</div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">快速链接</h3>
+            <div class="space-y-2 text-sm">
+              <div><a href="/sitemap-index.xml" class="hover:text-white transition-colors">站点地图</a></div>
+              <div><a href="/categories" class="hover:text-white transition-colors">全部分类</a></div>
             </div>
           </div>
         </div>

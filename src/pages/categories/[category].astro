@@ -25,7 +25,7 @@ const cnTools = allTools
   .sort((a, b) => a.data.rank - b.data.rank);
 ---
 
-<BaseLayout title={catInfo ? `${catInfo.name}工具排行` : category}>
+<BaseLayout title={catInfo ? `${catInfo.name}推荐与排行榜_${new Date().getFullYear()}` : category} description={catInfo?.desc || ""} keywords={`${catInfo?.name || category},AI工具,排行榜,推荐`}>
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="mb-8">
       <a href="/" class="text-sm text-gray-500 hover:text-gray-700">← 返回首页</a>
@@ -46,7 +46,7 @@ const cnTools = allTools
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {intlTools.map((tool) => (
-            <ToolCard {...tool.data} slug={tool.id} />
+            <ToolCard {...tool.data} slug={tool.id.replace(/\.md$/, "")} />
           ))}
         </div>
       </div>
@@ -60,7 +60,7 @@ const cnTools = allTools
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {cnTools.map((tool) => (
-            <ToolCard {...tool.data} slug={tool.id} />
+            <ToolCard {...tool.data} slug={tool.id.replace(/\.md$/, "")} />
           ))}
         </div>
       </div>
@@ -71,5 +71,18 @@ const cnTools = allTools
         该分类暂无工具，<a href="/" class="text-blue-600 hover:underline">返回首页</a>
       </div>
     )}
+
+    {/* Cross-category navigation */}
+    <div class="mt-16 pt-8 border-t border-gray-200">
+      <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">探索更多分类</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {categories.filter(c => c.slug !== category).map(c => (
+          <a href={`/categories/${c.slug}`} class="flex items-center gap-2 p-3 rounded-xl bg-white border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all text-sm">
+            <span class="text-lg">{c.emoji}</span>
+            <span class="font-medium text-gray-700">{c.name}</span>
+          </a>
+        ))}
+      </div>
+    </div>
   </section>
 </BaseLayout>

@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import AdBanner from "../../components/AdBanner.astro";
 import { getCollection } from "astro:content";
+import { categories } from "../../data/site";
 import type { GetStaticPaths } from "astro";
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -29,6 +30,7 @@ const catTheme: Record<string, { from: string; to: string; icon: string; accent:
   productivity: { from: "#d97706", to: "#ea580c", icon: "⚡", accent: "bg-amber-500" },
   "app-builder": { from: "#4f46e5", to: "#7c3aed", icon: "🧩", accent: "bg-indigo-500" },
 };
+const catName = categories.find(c => c.slug === category)?.name || category;
 const theme = catTheme[category] || catTheme.chat;
 const heroGradient = `background-image: linear-gradient(135deg, ${theme.from}, ${theme.to});`;
 
@@ -56,9 +58,10 @@ function starHTML(r: number) {
   }
   return s;
 }
+const seoTitle = `${name}是什么？功能、价格、使用教程_${new Date().getFullYear()}`;
 ---
 
-<BaseLayout title={name} description={description}>
+<BaseLayout title={seoTitle} description={description} keywords={tags.join(",")}>
   <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
     <!-- Breadcrumb -->
     <nav class="text-sm text-gray-500 mb-6">
@@ -112,6 +115,16 @@ function starHTML(r: number) {
           </div>
         </div>
         <AdBanner />
+
+        {/* Bottom navigation */}
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href={`/categories/${category}`} class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white border border-gray-200 text-sm font-medium text-gray-700 hover:border-blue-300 hover:text-blue-600 transition-all">
+            ← 返回{catName}分类
+          </a>
+          <a href="/" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition-all">
+            查看全部排行榜 →
+          </a>
+        </div>
       </div>
 
       <!-- Sidebar -->
