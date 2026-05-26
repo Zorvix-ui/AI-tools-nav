@@ -19,17 +19,18 @@ const { Content } = await tool.render();
 const { name, category, region, rank, description, url, pricing, rating, tags } = tool.data;
 
 // Category theming
-const catTheme: Record<string, { gradient: string; icon: string; accent: string }> = {
-  chat: { gradient: "from-blue-600 to-indigo-700", icon: "💬", accent: "bg-blue-500" },
-  code: { gradient: "from-emerald-600 to-teal-700", icon: "💻", accent: "bg-emerald-500" },
-  image: { gradient: "from-purple-600 to-pink-600", icon: "🎨", accent: "bg-purple-500" },
-  video: { gradient: "from-rose-600 to-red-600", icon: "🎬", accent: "bg-rose-500" },
-  audio: { gradient: "from-fuchsia-600 to-violet-600", icon: "🎵", accent: "bg-fuchsia-500" },
-  search: { gradient: "from-cyan-600 to-blue-600", icon: "🔍", accent: "bg-cyan-500" },
-  productivity: { gradient: "from-amber-600 to-orange-600", icon: "⚡", accent: "bg-amber-500" },
-  "app-builder": { gradient: "from-indigo-600 to-violet-600", icon: "🧩", accent: "bg-indigo-500" },
+const catTheme: Record<string, { from: string; to: string; icon: string; accent: string }> = {
+  chat: { from: "#2563eb", to: "#4338ca", icon: "💬", accent: "bg-blue-500" },
+  code: { from: "#059669", to: "#0f766e", icon: "💻", accent: "bg-emerald-500" },
+  image: { from: "#7c3aed", to: "#c026d3", icon: "🎨", accent: "bg-purple-500" },
+  video: { from: "#e11d48", to: "#dc2626", icon: "🎬", accent: "bg-rose-500" },
+  audio: { from: "#c026d3", to: "#7c3aed", icon: "🎵", accent: "bg-fuchsia-500" },
+  search: { from: "#0891b2", to: "#2563eb", icon: "🔍", accent: "bg-cyan-500" },
+  productivity: { from: "#d97706", to: "#ea580c", icon: "⚡", accent: "bg-amber-500" },
+  "app-builder": { from: "#4f46e5", to: "#7c3aed", icon: "🧩", accent: "bg-indigo-500" },
 };
 const theme = catTheme[category] || catTheme.chat;
+const heroGradient = `background-image: linear-gradient(135deg, ${theme.from}, ${theme.to});`;
 
 const pricingCfg: Record<string, { label: string; cls: string }> = {
   "免费": { label: "免费", cls: "bg-green-100 text-green-700 border-green-200" },
@@ -69,7 +70,7 @@ function starHTML(r: number) {
     </nav>
 
     <!-- Hero Card -->
-    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br {theme.gradient} text-white p-8 mb-10">
+    <div class="relative overflow-hidden rounded-2xl text-white p-8 mb-10" style={heroGradient}>
       <div class="absolute inset-0 bg-black/10"></div>
       <div class="absolute top-0 right-0 w-64 h-64 rounded-full bg-white/5 -translate-y-1/2 translate-x-1/2"></div>
       <div class="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-white/5 translate-y-1/2 -translate-x-1/2"></div>
