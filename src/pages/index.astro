@@ -77,7 +77,7 @@ const cnTotal = allTools.filter(t => t.data.region === "国内").length;
               <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">🌍 国外排行</h4>
               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
                 {intl.map((tool) => (
-                  <ToolCard {...tool.data} slug={tool.id} />
+                  <ToolCard {...tool.data} slug={tool.id.replace(/\.md$/, "")} />
                 ))}
               </div>
             </div>
@@ -88,7 +88,7 @@ const cnTotal = allTools.filter(t => t.data.region === "国内").length;
               <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">🇨🇳 国内排行</h4>
               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
                 {cn.map((tool) => (
-                  <ToolCard {...tool.data} slug={tool.id} />
+                  <ToolCard {...tool.data} slug={tool.id.replace(/\.md$/, "")} />
                 ))}
               </div>
             </div>

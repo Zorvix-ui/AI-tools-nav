@@ -6,11 +6,11 @@ import type { GetStaticPaths } from "astro";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const tools = await getCollection("tools");
-  return tools.map((tool) => ({ params: { slug: tool.id } }));
+  return tools.map((tool) => ({ params: { slug: tool.id.replace(/\.md$/, "") } }));
 };
 
 const { slug } = Astro.params;
-const tool = (await getCollection("tools")).find((t) => t.id === slug);
+const tool = (await getCollection("tools")).find((t) => t.id.replace(/\.md$/, "") === slug);
 
 if (!tool) {
   return Astro.redirect("/404");
