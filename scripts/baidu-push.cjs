@@ -8,7 +8,7 @@ const path = require("path");
 
 const SITE = "https://zorplan.cn";
 const TOKEN = "Ttm0IaUN06RbeK0i";
-const API_URL = `http://data.zz.baidu.com/urls?site=${encodeURIComponent(SITE)}&token=${TOKEN}`;
+const API_URL = `http://data.zz.baidu.com/urls?site=zorplan.cn&token=${TOKEN}`;
 
 // 从 dist 目录收集所有 URL
 function collectURLs(distDir) {
